@@ -1,0 +1,85 @@
+page-professor {
+
+
+$colors-list: #111 #222 #333 #444 #555;
+
+  .background {
+  background-size: 400% 400%;
+  background: linear-gradient(25deg,#FF0000,#F12094,#D323CD);
+  animation: colorchange 10s ease-out infinite;
+  -webkit-animation: colorchange 10s ease-out infinite;
+  }
+
+  .toolbar-background {
+  background-color: #6f6fdc;
+}
+
+  .circle
+  {
+
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+  }
+  .scroll-content
+  {
+    /*align-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;*/
+    text-align: center;
+  }
+  ion-card.card
+  {
+    box-shadow: none;
+    background: rgba(232, 230, 230, 0px);
+    border-radius: 10px;
+    z-index: 100;
+    filter: alpha(opacity=100);
+
+  }
+  .item
+  {
+    background: rgba(232, 230, 230, 0px);
+    border: medium none;
+  }
+  ion-input
+  {
+    border-bottom: #D323CD solid 1px;
+  }
+  h1
+  {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 3em;
+    font-weight: 800;
+    color: #000000;
+  }
+
+.text {
+  text-align: center;
+  margin-top: 56px;
+  color: #fff;
+  font-size: 1.0em;
+  text-transform: uppercase;
+}
+
+.animated {
+  animation-duration: 2.5s;
+  animation-fill-mode: both;
+  animation-iteration-count: 1;
+}
+@keyframes pulse {
+  0% {transform: scale(1);}
+  50% {transform: scale(1.1);}
+  100% {transform: scale(1);}
+}
+.pulse {
+  animation-name: pulse;
+  animation-duration: 500ms;
+}
+
+
+}

@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar >
+    <ion-title>Professors Login</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="text animated pulse">
+    
+    <ion-card-content>
+      <ion-list no-lines>
+
+        <ion-item>
+            <img class="circle" src="../img/logo.jpg" alt="your image">
+        </ion-item>
+
+        <ion-item>
+
+          <ion-label floating style="color: #00004d; font-weight: 900;">Username   <ion-icon ios="ios-lock" md="md-lock"></ion-icon>
+          </ion-label>
+          <ion-input type="text" name="email" [(ngModel)]="user.email"></ion-input>
+        </ion-item>
+        
+        <ion-item>
+          <ion-label floating style="color: #00004d; font-weight: 900;">Password  <ion-icon ios="ios-key" md="md-key"></ion-icon>
+          </ion-label>
+          <ion-input type="password" name="password" [(ngModel)]="user.password"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <p style="color: #000000; font-weight: 900; font-size: 15px;">Forgot Password ? <a style="color:#000000;font-weight: 900; font-size: 15px; " (click)="reset()">Get Your password</a></p>
+        </ion-item>
+        <button ion-button  block  id="loginBtn" (click)="login(user)" style="background-color: navy;  ">Login</button>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
