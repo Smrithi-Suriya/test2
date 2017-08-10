@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,AlertController } from 'ionic-angular';
 import {ProfilePage} from '../profile/profile'
 import {FormGroup, FormBuilder, FormControl, Validators} from "@angular/forms";
 import * as firebase from 'firebase';
@@ -9,6 +9,11 @@ import {AngularFireDatabase,FirebaseObjectObservable, FirebaseListObservable} fr
 import {AngularFireModule} from 'angularfire2';
 
 import {NameDetails} from '../../models/namedetails';
+import {Http ,Headers} from '@angular/http';
+import 'rxjs/add/operator/map';
+
+import {SMS} from 'ionic-native';
+
 
 import 'rxjs/add/operator/map';
 
@@ -45,6 +50,10 @@ export class AttendancePage {
   public absentArray: Array<any> = [];
   public index: number;
   attendanceObject: any = {};
+  message:string;
+  absentName:Array <any>=[];
+  absentNumber:Array <any>=[];
+
 
   form: FormGroup;
   tabBarElement: any;
@@ -55,7 +64,7 @@ export class AttendancePage {
   namedetails:FirebaseObjectObservable<NameDetails>;
   
   namedetails2:any;
-  constructor(public navCtrl: NavController, public navParams: NavParams,private afauth:AngularFireAuth,private afData:AngularFireDatabase, fb: FormBuilder)
+  constructor(public navCtrl: NavController,private alertCtrl: AlertController, public navParams: NavParams,private afauth:AngularFireAuth,private afData:AngularFireDatabase, fb: FormBuilder)
   {
 
     
@@ -125,6 +134,60 @@ confirmAttendance(){
   
   this.attendanceDetails.push(this.attendanceObject);
 
+
+  let alert = this.alertCtrl.create({
+    title: 'Confirm ',
+    message: 'Do you want to Confirm?',
+    buttons: [
+      {
+        text: 'Cancel',
+        role: 'cancel',
+        handler: () => {
+          console.log('Cancel clicked');
+        }
+      },
+      {
+        text: 'OK',
+        handler: () =>
+        {
+              console.log('OK clicked');
+              try
+              {
+                  for (let i of this.absentArray)
+                  {
+                        console.log(i);
+                        this.namedetails2=this.afData.object('Namelist/Namelist/'+this.dept+'/'+this.year+' Year/'+i);
+                        this.namedetails2.subscribe(data =>
+                          {
+                                this.absentName.push(data.Name);
+                                this.absentNumber.push(data.Phno);
+                          });
+                        //this.message="This is to inform you that your Ward "+ +" is found Absent today dated "+this.attendanceObject.currentDate + " duing the period "+this.attendanceObject.periodNo;
+                       //SMS.send('9444978521','message');
+                 }
+                 for (let i=0;i<this.absentName.length;i++)
+                 {
+
+                      this.message="This is to inform you that your Ward "+this.absentName[i] +" is found Absent today dated "+this.attendanceObject.currentDate +"/"+this.attendanceObject.currentMonth +"/"+this.attendanceObject.currentYear + " duing period "+this.attendanceObject.periodNo;
+                      SMS.send(this.absentNumber[i],this.message);
+                      console.log(this.absentName[i],this.absentNumber[i],this.message);
+                 }
+              }
+              catch(e)
+              {
+                console.log(e);
+              }
+
+        }
+      }
+    ]
+  });
+  alert.present();
+
+}
+goBack(){
+
+  this.navCtrl.pop();
 }
 
   ionViewWillEnter() {

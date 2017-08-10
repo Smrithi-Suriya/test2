@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar hideBackButton>
     <ion-title>report</ion-title>
   </ion-navbar>
 
@@ -20,5 +20,10 @@
     </ion-item>
   </ion-list>
 
+  <ion-list>
+    <ion-item>
+        <button ion-button type = "button" (click)="goBack()">Back</button>
+    </ion-item>
+  </ion-list>
 
 </ion-content>

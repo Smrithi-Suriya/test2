@@ -1,155 +1,18 @@
 webpackJsonp([0],{
 
-/***/ 110:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProfessorPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_database__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__profile_profile__ = __webpack_require__(113);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__reset_reset__ = __webpack_require__(336);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__profile_edit_profile_edit__ = __webpack_require__(337);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [0, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-};
-
-
-
-
-
-
-
-
-var ProfessorPage = (function () {
-    function ProfessorPage(navCtrl, navParams, afauth, alertCtrl, afData) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.afauth = afauth;
-        this.alertCtrl = alertCtrl;
-        this.afData = afData;
-        this.user = {};
-        console.log(this.user.email);
-    }
-    ProfessorPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad LoginPage');
-    };
-    ProfessorPage.prototype.login = function (user) {
-        return __awaiter(this, void 0, void 0, function () {
-            var _this = this;
-            var res, e_1, alert_1;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        console.log("login fired:" + user.email, user.password);
-                        _a.label = 1;
-                    case 1:
-                        _a.trys.push([1, 3, , 4]);
-                        return [4 /*yield*/, this.afauth.auth.signInWithEmailAndPassword(user.email, user.password)];
-                    case 2:
-                        res = _a.sent();
-                        console.log(res);
-                        this.proDetails = this.afData.object('Professor/' + res.uid);
-                        this.proDetails.subscribe(function (data) {
-                            console.log(data.fname);
-                            if (data.fname != undefined) {
-                                _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_4__profile_profile__["a" /* ProfilePage */]);
-                            }
-                            else {
-                                _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_6__profile_edit_profile_edit__["a" /* ProfileEditPage */]);
-                            }
-                        });
-                        return [3 /*break*/, 4];
-                    case 3:
-                        e_1 = _a.sent();
-                        console.log(e_1.message);
-                        alert_1 = this.alertCtrl.create({
-                            title: e_1.message,
-                            subTitle: 'Please check your Information',
-                            buttons: ['OK']
-                        });
-                        alert_1.present();
-                        return [3 /*break*/, 4];
-                    case 4: return [2 /*return*/];
-                }
-            });
-        });
-    };
-    ProfessorPage.prototype.reset = function () {
-        console.log("Reset page fired");
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__reset_reset__["a" /* ResetPage */]);
-    };
-    return ProfessorPage;
-}());
-ProfessorPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-professor',template:/*ion-inline-start:"E:\Work\Mini Project\Lapp-master\src\pages\Professor\Professor.html"*/'<ion-header>\n  <ion-navbar >\n    <ion-title>Professors Login</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-card class="text animated pulse">\n    \n    <ion-card-content>\n      <ion-list no-lines>\n\n        <ion-item>\n            <img class="circle" src="../img/logo.jpg" alt="your image">\n        </ion-item>\n\n        <ion-item>\n\n          <ion-label floating style="color: #00004d; font-weight: 900;">Username   <ion-icon ios="ios-lock" md="md-lock"></ion-icon>\n          </ion-label>\n          <ion-input type="text" name="email" [(ngModel)]="user.email"></ion-input>\n        </ion-item>\n        \n        <ion-item>\n          <ion-label floating style="color: #00004d; font-weight: 900;">Password  <ion-icon ios="ios-key" md="md-key"></ion-icon>\n          </ion-label>\n          <ion-input type="password" name="password" [(ngModel)]="user.password"></ion-input>\n        </ion-item>\n\n        <ion-item>\n          <p style="color: #000000; font-weight: 900; font-size: 15px;">Forgot Password ? <a style="color:#000000;font-weight: 900; font-size: 15px; " (click)="reset()">Get Your password</a></p>\n        </ion-item>\n        <button ion-button  block  id="loginBtn" (click)="login(user)" style="background-color: navy;  ">Login</button>\n      </ion-list>\n    </ion-card-content>\n  </ion-card>\n</ion-content>\n'/*ion-inline-end:"E:\Work\Mini Project\Lapp-master\src\pages\Professor\Professor.html"*/,
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__["a" /* AngularFireAuth */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_3_angularfire2_database__["a" /* AngularFireDatabase */]])
-], ProfessorPage);
-
-//# sourceMappingURL=Professor.js.map
-
-/***/ }),
-
-/***/ 113:
+/***/ 137:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProfilePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_database__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__attendance_attendance__ = __webpack_require__(219);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__report_report__ = __webpack_require__(220);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Professor_Professor__ = __webpack_require__(110);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_moment__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_moment__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_database__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__attendance_attendance__ = __webpack_require__(255);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__report_report__ = __webpack_require__(409);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_moment__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_moment__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -159,7 +22,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
 
 
 
@@ -175,7 +37,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * on Ionic pages and navigation.
  */
 var ProfilePage = (function () {
-    function ProfilePage(navCtrl, navParams, afauth, tc, alertCtrl, afData) {
+    function ProfilePage(navCtrl, navParams, /*private bar:BarcodeScanner,*/ afauth, tc, alertCtrl, afData) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.afauth = afauth;
@@ -270,17 +132,17 @@ var ProfilePage = (function () {
     ProfilePage.prototype.ionViewDidLoad = function () {
         var _this = this;
         console.log('ionViewDidLoad ProfilePage');
-        var time = __WEBPACK_IMPORTED_MODULE_7_moment__();
+        var time = __WEBPACK_IMPORTED_MODULE_6_moment__();
         var format = 'hh:mm:ss';
-        var period1 = __WEBPACK_IMPORTED_MODULE_7_moment__('8:00:00', format);
-        var period2 = __WEBPACK_IMPORTED_MODULE_7_moment__('9:00:00', format);
-        var period3 = __WEBPACK_IMPORTED_MODULE_7_moment__('10:10:00', format);
-        var period4 = __WEBPACK_IMPORTED_MODULE_7_moment__('11:00:00', format);
-        var period5 = __WEBPACK_IMPORTED_MODULE_7_moment__('11:50:00', format);
-        var period6 = __WEBPACK_IMPORTED_MODULE_7_moment__('13:20:00', format);
-        var period7 = __WEBPACK_IMPORTED_MODULE_7_moment__('14:20:00', format);
-        var period8 = __WEBPACK_IMPORTED_MODULE_7_moment__('15:10:00', format);
-        var period9 = __WEBPACK_IMPORTED_MODULE_7_moment__('23:10:00', format);
+        var period1 = __WEBPACK_IMPORTED_MODULE_6_moment__('8:00:00', format);
+        var period2 = __WEBPACK_IMPORTED_MODULE_6_moment__('9:00:00', format);
+        var period3 = __WEBPACK_IMPORTED_MODULE_6_moment__('10:10:00', format);
+        var period4 = __WEBPACK_IMPORTED_MODULE_6_moment__('11:00:00', format);
+        var period5 = __WEBPACK_IMPORTED_MODULE_6_moment__('11:50:00', format);
+        var period6 = __WEBPACK_IMPORTED_MODULE_6_moment__('13:20:00', format);
+        var period7 = __WEBPACK_IMPORTED_MODULE_6_moment__('14:20:00', format);
+        var period8 = __WEBPACK_IMPORTED_MODULE_6_moment__('15:10:00', format);
+        var period9 = __WEBPACK_IMPORTED_MODULE_6_moment__('23:10:00', format);
         if (time.isBetween(period1, period2)) {
             this.period = '1';
         }
@@ -333,7 +195,7 @@ var ProfilePage = (function () {
     ProfilePage.prototype.logout = function () {
         console.log("logout button fired");
         this.afauth.auth.signOut();
-        this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_6__Professor_Professor__["a" /* ProfessorPage */]);
+        this.navCtrl.pop();
     };
     ProfilePage.prototype.markAttendance = function (sYear, sDepartment, sSubject) {
         if ("undefined" === typeof sYear || "undefined" === typeof sDepartment || "undefined" === typeof sSubject) {
@@ -346,7 +208,7 @@ var ProfilePage = (function () {
         }
         else {
             console.log("attendance firered" + sYear.name + sDepartment.name + this.selectedPeriods);
-            this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_4__attendance_attendance__["a" /* AttendancePage */], {
+            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__attendance_attendance__["a" /* AttendancePage */], {
                 param1: sYear.name,
                 param2: sDepartment.name,
                 param3: this.selectedPeriods,
@@ -368,7 +230,7 @@ var ProfilePage = (function () {
             alert_2.present();
         }
         else {
-            this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_5__report_report__["a" /* ReportPage */], {
+            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__report_report__["a" /* ReportPage */], {
                 param1: sYear.name,
                 param2: sDepartment.name,
                 param3: this.selectedPeriods,
@@ -384,7 +246,7 @@ var ProfilePage = (function () {
 }());
 ProfilePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-profile',template:/*ion-inline-start:"E:\Work\Mini Project\Lapp-master\src\pages\profile\profile.html"*/'<!--\n  Generated template for the ProfilePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="primary">\n        <ion-title>Profile page</ion-title>\n    <ion-buttons right color="danger">\n      <button ion-button (click)="logout()">Logout</button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n	<ion-list>\n		<ion-item>\n			<ion-label>Username:{{(profiledetails|async)?.fname}}</ion-label>\n		</ion-item>\n\n  <ion-item>\n    <ion-label>Period No</ion-label>\n    <ion-select (ionChange)="setPeriod(sPeriod)" [(ngModel)]="sPeriod" >\n      <ion-option *ngFor="let period of periods()">{{period}}</ion-option>\n    </ion-select>\n  </ion-item>\n\n  <ion-item>\n     <ion-label><strong>Year</strong></ion-label>\n     <ion-select (ionChange)="setDepartmentValues(sYear,sSemester,sDepartment)" [(ngModel)]="sYear">\n          <ion-option [value]="sYear" *ngFor = "let sYear of years">{{sYear.name}}  </ion-option>\n    </ion-select>\n    </ion-item>\n\n\n\n<ion-item>\n    <ion-label>Semester</ion-label>\n    <ion-select  [(ngModel)]="sSemester" (ionChange)="setSubjectValues(sYear,sSemester,sDepartment)">\n      <ion-option [value]="sSemester" *ngFor="let sSemester of semesters ">{{sSemester.name}}</ion-option>\n    </ion-select>\n  </ion-item>\n\n\n\n\n<ion-item>\n      <ion-label>Department</ion-label>\n      <ion-select (ionChange)="setSubjectValues(sYear,sSemester,sDepartment)" [(ngModel)]="sDepartment">\n         <ion-option [value]="sDepartment" *ngFor = "let sDepartment of selectedDepartments">{{sDepartment.name}}</ion-option>\n      </ion-select>\n </ion-item>\n\n\n\n\n\n  <ion-item >\n    <ion-label> Subject </ion-label>\n      <ion-select [(ngModel)]="sSubject" (ionChange)="finalizeSubjectValue(sSubject)">\n        <ion-option [value]="sSubject" *ngFor="let sSubject of selectedSubjects" >{{sSubject}}</ion-option>\n      </ion-select>\n\n  </ion-item>\n\n\n  <ion-item>\n    <ion-label> Date </ion-label>\n    <ion-datetime displayFormat="DD-MM-YYYY" [(ngModel)]="today" (ionChange)="dateChange(today)"></ion-datetime>\n  </ion-item>\n\n  <button ion-button block style="background-color: navy;" (click)="markAttendance(sYear,sDepartment,sSubject)">\n    MARK ATTENDANCE</button><br>\n\n\n  <button ion-button block style="background-color: navy;" (click)="checkAttendance(sYear,sDepartment,sSemester,sSubject)">\n    GENERATE REPORT</button><br>\n </ion-list>\n</ion-content>\n'/*ion-inline-end:"E:\Work\Mini Project\Lapp-master\src\pages\profile\profile.html"*/,
+        selector: 'page-profile',template:/*ion-inline-start:"E:\Work\Mini Project\LicetApp\src\pages\profile\profile.html"*/'<!--\n  Generated template for the ProfilePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="primary">\n        <ion-title>Profile page</ion-title>\n    <ion-buttons right color="danger">\n      <button ion-button (click)="logout()">Logout</button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n	<ion-list>\n		<ion-item>\n			<ion-label>Username:{{(profiledetails|async)?.fname}}</ion-label>\n		</ion-item>\n\n  <ion-item>\n    <ion-label>Period No</ion-label>\n    <ion-select (ionChange)="setPeriod(sPeriod)" [(ngModel)]="sPeriod" >\n      <ion-option *ngFor="let period of periods()">{{period}}</ion-option>\n    </ion-select>\n  </ion-item>\n\n  <ion-item>\n     <ion-label><strong>Year</strong></ion-label>\n     <ion-select (ionChange)="setDepartmentValues(sYear,sSemester,sDepartment)" [(ngModel)]="sYear">\n          <ion-option [value]="sYear" *ngFor = "let sYear of years">{{sYear.name}}  </ion-option>\n    </ion-select>\n    </ion-item>\n\n\n\n<ion-item>\n    <ion-label>Semester</ion-label>\n    <ion-select  [(ngModel)]="sSemester" (ionChange)="setSubjectValues(sYear,sSemester,sDepartment)">\n      <ion-option [value]="sSemester" *ngFor="let sSemester of semesters ">{{sSemester.name}}</ion-option>\n    </ion-select>\n  </ion-item>\n\n\n\n\n<ion-item>\n      <ion-label>Department</ion-label>\n      <ion-select (ionChange)="setSubjectValues(sYear,sSemester,sDepartment)" [(ngModel)]="sDepartment">\n         <ion-option [value]="sDepartment" *ngFor = "let sDepartment of selectedDepartments">{{sDepartment.name}}</ion-option>\n      </ion-select>\n </ion-item>\n\n\n\n\n\n  <ion-item >\n    <ion-label> Subject </ion-label>\n      <ion-select [(ngModel)]="sSubject" (ionChange)="finalizeSubjectValue(sSubject)">\n        <ion-option [value]="sSubject" *ngFor="let sSubject of selectedSubjects" >{{sSubject}}</ion-option>\n      </ion-select>\n\n  </ion-item>\n\n\n  <ion-item>\n    <ion-label> Date </ion-label>\n    <ion-datetime displayFormat="DD-MM-YYYY" [(ngModel)]="today" (ionChange)="dateChange(today)"></ion-datetime>\n  </ion-item>\n\n  <button ion-button block style="background-color: navy;" (click)="markAttendance(sYear,sDepartment,sSubject)">\n    MARK ATTENDANCE</button><br>\n\n\n  <button ion-button block style="background-color: navy;" (click)="checkAttendance(sYear,sDepartment,sSemester,sSubject)">\n    GENERATE REPORT</button><br>\n<!--\n  <br>\n  <button ion-button block style="background-color: navy;" type="button" (click)="scancode()">Scan Barcode</button>\n-->\n </ion-list>\n</ion-content>\n'/*ion-inline-end:"E:\Work\Mini Project\LicetApp\src\pages\profile\profile.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__["a" /* AngularFireAuth */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* ToastController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_3_angularfire2_database__["a" /* AngularFireDatabase */]])
 ], ProfilePage);
@@ -393,7 +255,7 @@ ProfilePage = __decorate([
 
 /***/ }),
 
-/***/ 120:
+/***/ 151:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -402,11 +264,11 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 120;
+webpackEmptyAsyncContext.id = 151;
 
 /***/ }),
 
-/***/ 161:
+/***/ 194:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -415,19 +277,19 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 161;
+webpackEmptyAsyncContext.id = 194;
 
 /***/ }),
 
-/***/ 205:
+/***/ 239:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Student_Student__ = __webpack_require__(206);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__testtab_testtab__ = __webpack_require__(207);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Professor_Professor__ = __webpack_require__(110);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Student_Student__ = __webpack_require__(240);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__testtab_testtab__ = __webpack_require__(241);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Professor_Professor__ = __webpack_require__(242);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -450,7 +312,7 @@ var TabsPage = (function () {
     return TabsPage;
 }());
 TabsPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"E:\Work\Mini Project\Lapp-master\src\pages\tabs\tabs.html"*/'<ion-tabs color="dark">\n  <ion-tab [root]="tab1Root" tabTitle="Professors Login" ></ion-tab>\n  <ion-tab [root]="tab2Root" tabTitle="Students Login" ></ion-tab>\n  <ion-tab [root]="tab3Root" tabTitle="Test Tab"  ></ion-tab>\n</ion-tabs>\n'/*ion-inline-end:"E:\Work\Mini Project\Lapp-master\src\pages\tabs\tabs.html"*/
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"E:\Work\Mini Project\LicetApp\src\pages\tabs\tabs.html"*/'<ion-tabs color="dark">\n  <ion-tab [root]="tab1Root" tabTitle="Professors Login" ></ion-tab>\n  <ion-tab [root]="tab2Root" tabTitle="Students Login" ></ion-tab>\n  <ion-tab [root]="tab3Root" tabTitle="Test Tab"  ></ion-tab>\n</ion-tabs>\n'/*ion-inline-end:"E:\Work\Mini Project\LicetApp\src\pages\tabs\tabs.html"*/
     }),
     __metadata("design:paramtypes", [])
 ], TabsPage);
@@ -459,13 +321,13 @@ TabsPage = __decorate([
 
 /***/ }),
 
-/***/ 206:
+/***/ 240:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StudentPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -485,7 +347,7 @@ var StudentPage = (function () {
 }());
 StudentPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-student',template:/*ion-inline-start:"E:\Work\Mini Project\Lapp-master\src\pages\Student\Student.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-title>Students Login</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n\n  <ion-card class="text animated pulse">\n    \n    <ion-card-content>\n      <ion-list no-lines>\n      <ion-item>\n            <img class="circle" src="../img/logo.jpg" alt="your image">\n        </ion-item>\n        <ion-item>\n          <ion-label floating style="color: #00004d; font-weight: 900;">Username <ion-icon name="lock"></ion-icon>\n          </ion-label>\n          <ion-input type="text"></ion-input>\n        </ion-item>\n        <ion-item>\n          <ion-label floating style="color: #00004d; font-weight: 900;">Password <ion-icon ios="ios-key" md="md-key"></ion-icon>\n           </ion-label>\n          <ion-input type="password"></ion-input>\n        </ion-item>\n        <ion-item>\n          <p style="color: #000000; font-weight: 900; font-size: 15px;">Forgot Password ? <a style="color: #000000; font-weight: 900; font-size: 15px;">Get Your password</a></p>\n        </ion-item>\n        <button ion-button block style="background-color: navy;">Login</button>\n      </ion-list>\n    </ion-card-content>\n  </ion-card>\n</ion-content>\n'/*ion-inline-end:"E:\Work\Mini Project\Lapp-master\src\pages\Student\Student.html"*/
+        selector: 'page-student',template:/*ion-inline-start:"E:\Work\Mini Project\LicetApp\src\pages\Student\Student.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-title>Students Login</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n\n  <ion-card class="text animated pulse">\n    \n    <ion-card-content>\n      <ion-list no-lines>\n      <ion-item>\n            <img class="circle" src="../img/logo.jpg" alt="your image">\n        </ion-item>\n        <ion-item>\n          <ion-label floating style="color: #00004d; font-weight: 900;">Username <ion-icon name="lock"></ion-icon>\n          </ion-label>\n          <ion-input type="text"></ion-input>\n        </ion-item>\n        <ion-item>\n          <ion-label floating style="color: #00004d; font-weight: 900;">Password <ion-icon ios="ios-key" md="md-key"></ion-icon>\n           </ion-label>\n          <ion-input type="password"></ion-input>\n        </ion-item>\n        <ion-item>\n          <p style="color: #000000; font-weight: 900; font-size: 15px;">Forgot Password ? <a style="color: #000000; font-weight: 900; font-size: 15px;">Get Your password</a></p>\n        </ion-item>\n        <button ion-button block style="background-color: navy;">Login</button>\n      </ion-list>\n    </ion-card-content>\n  </ion-card>\n</ion-content>\n'/*ion-inline-end:"E:\Work\Mini Project\LicetApp\src\pages\Student\Student.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
 ], StudentPage);
@@ -494,13 +356,13 @@ StudentPage = __decorate([
 
 /***/ }),
 
-/***/ 207:
+/***/ 241:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TestTabPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -520,7 +382,7 @@ var TestTabPage = (function () {
 }());
 TestTabPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-testtab',template:/*ion-inline-start:"E:\Work\Mini Project\Lapp-master\src\pages\testtab\testtab.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Test Tabs\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n    <ion-list-header>Follow us on Twitter</ion-list-header>\n    <ion-item>\n      <ion-icon name="ionic" item-left></ion-icon>\n      @ionicframework\n    </ion-item>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"E:\Work\Mini Project\Lapp-master\src\pages\testtab\testtab.html"*/
+        selector: 'page-testtab',template:/*ion-inline-start:"E:\Work\Mini Project\LicetApp\src\pages\testtab\testtab.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Test Tabs\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n    <ion-list-header>Follow us on Twitter</ion-list-header>\n    <ion-item>\n      <ion-icon name="ionic" item-left></ion-icon>\n      @ionicframework\n    </ion-item>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"E:\Work\Mini Project\LicetApp\src\pages\testtab\testtab.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
 ], TestTabPage);
@@ -529,18 +391,155 @@ TestTabPage = __decorate([
 
 /***/ }),
 
-/***/ 219:
+/***/ 242:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProfessorPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_database__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__profile_profile__ = __webpack_require__(137);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__reset_reset__ = __webpack_require__(525);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__profile_edit_profile_edit__ = __webpack_require__(526);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
+
+
+
+
+
+
+var ProfessorPage = (function () {
+    function ProfessorPage(navCtrl, navParams, afauth, alertCtrl, afData) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.afauth = afauth;
+        this.alertCtrl = alertCtrl;
+        this.afData = afData;
+        this.user = {};
+        console.log(this.user.email);
+    }
+    ProfessorPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad LoginPage');
+    };
+    ProfessorPage.prototype.login = function (user) {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            var res, e_1, alert_1;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        console.log("login fired:" + user.email, user.password);
+                        _a.label = 1;
+                    case 1:
+                        _a.trys.push([1, 3, , 4]);
+                        return [4 /*yield*/, this.afauth.auth.signInWithEmailAndPassword(user.email, user.password)];
+                    case 2:
+                        res = _a.sent();
+                        console.log(res);
+                        this.proDetails = this.afData.object('Professor/' + res.uid);
+                        this.proDetails.subscribe(function (data) {
+                            console.log(data.fname);
+                            if (data.fname != undefined) {
+                                _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__profile_profile__["a" /* ProfilePage */]);
+                            }
+                            else {
+                                _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_6__profile_edit_profile_edit__["a" /* ProfileEditPage */]);
+                            }
+                        });
+                        return [3 /*break*/, 4];
+                    case 3:
+                        e_1 = _a.sent();
+                        console.log(e_1.message);
+                        alert_1 = this.alertCtrl.create({
+                            title: e_1.message,
+                            subTitle: 'Please check your Information',
+                            buttons: ['OK']
+                        });
+                        alert_1.present();
+                        return [3 /*break*/, 4];
+                    case 4: return [2 /*return*/];
+                }
+            });
+        });
+    };
+    ProfessorPage.prototype.reset = function () {
+        console.log("Reset page fired");
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__reset_reset__["a" /* ResetPage */]);
+    };
+    return ProfessorPage;
+}());
+ProfessorPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-professor',template:/*ion-inline-start:"E:\Work\Mini Project\LicetApp\src\pages\Professor\Professor.html"*/'<ion-header>\n  <ion-navbar >\n    <ion-title>Professors Login</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-card class="text animated pulse">\n    \n    <ion-card-content>\n      <ion-list no-lines>\n\n        <ion-item>\n            <img class="circle" src="../img/logo.jpg" alt="your image">\n        </ion-item>\n\n        <ion-item>\n\n          <ion-label floating style="color: #00004d; font-weight: 900;">Username   <ion-icon ios="ios-lock" md="md-lock"></ion-icon>\n          </ion-label>\n          <ion-input type="text" name="email" [(ngModel)]="user.email"></ion-input>\n        </ion-item>\n        \n        <ion-item>\n          <ion-label floating style="color: #00004d; font-weight: 900;">Password  <ion-icon ios="ios-key" md="md-key"></ion-icon>\n          </ion-label>\n          <ion-input type="password" name="password" [(ngModel)]="user.password"></ion-input>\n        </ion-item>\n\n        <ion-item>\n          <p style="color: #000000; font-weight: 900; font-size: 15px;">Forgot Password ? <a style="color:#000000;font-weight: 900; font-size: 15px; " (click)="reset()">Get Your password</a></p>\n        </ion-item>\n        <button ion-button  block  id="loginBtn" (click)="login(user)" style="background-color: navy;  ">Login</button>\n      </ion-list>\n    </ion-card-content>\n  </ion-card>\n</ion-content>\n'/*ion-inline-end:"E:\Work\Mini Project\LicetApp\src\pages\Professor\Professor.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__["a" /* AngularFireAuth */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_3_angularfire2_database__["a" /* AngularFireDatabase */]])
+], ProfessorPage);
+
+//# sourceMappingURL=Professor.js.map
+
+/***/ }),
+
+/***/ 255:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AttendancePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angularfire2_database__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__ = __webpack_require__(427);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angularfire2_database__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__ = __webpack_require__(138);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ionic_native__ = __webpack_require__(591);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -556,6 +555,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 /**
  * Generated class for the AttendancePage page.
  *
@@ -563,9 +564,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * on Ionic pages and navigation.
  */
 var AttendancePage = (function () {
-    function AttendancePage(navCtrl, navParams, afauth, afData, fb) {
+    function AttendancePage(navCtrl, alertCtrl, navParams, afauth, afData, fb) {
         var _this = this;
         this.navCtrl = navCtrl;
+        this.alertCtrl = alertCtrl;
         this.navParams = navParams;
         this.afauth = afauth;
         this.afData = afData;
@@ -576,6 +578,8 @@ var AttendancePage = (function () {
         this.presentArray = [];
         this.absentArray = [];
         this.attendanceObject = {};
+        this.absentName = [];
+        this.absentNumber = [];
         this.selectedStudents = [''];
         this.tabBarElement = document.querySelector('.tabbar.show-tabbar');
         this.year = this.navParams.get('param1');
@@ -624,6 +628,50 @@ var AttendancePage = (function () {
         this.attendanceObject.currentYear = this.sYear;
         console.log(this.attendanceObject);
         this.attendanceDetails.push(this.attendanceObject);
+        var alert = this.alertCtrl.create({
+            title: 'Confirm ',
+            message: 'Do you want to Confirm?',
+            buttons: [
+                {
+                    text: 'Cancel',
+                    role: 'cancel',
+                    handler: function () {
+                        console.log('Cancel clicked');
+                    }
+                },
+                {
+                    text: 'OK',
+                    handler: function () {
+                        console.log('OK clicked');
+                        try {
+                            for (var _i = 0, _a = _this.absentArray; _i < _a.length; _i++) {
+                                var i = _a[_i];
+                                console.log(i);
+                                _this.namedetails2 = _this.afData.object('Namelist/Namelist/' + _this.dept + '/' + _this.year + ' Year/' + i);
+                                _this.namedetails2.subscribe(function (data) {
+                                    _this.absentName.push(data.Name);
+                                    _this.absentNumber.push(data.Phno);
+                                });
+                                //this.message="This is to inform you that your Ward "+ +" is found Absent today dated "+this.attendanceObject.currentDate + " duing the period "+this.attendanceObject.periodNo;
+                                //SMS.send('9444978521','message');
+                            }
+                            for (var i = 0; i < _this.absentName.length; i++) {
+                                _this.message = "This is to inform you that your Ward " + _this.absentName[i] + " is found Absent today dated " + _this.attendanceObject.currentDate + "/" + _this.attendanceObject.currentMonth + "/" + _this.attendanceObject.currentYear + " duing the period " + _this.attendanceObject.periodNo;
+                                __WEBPACK_IMPORTED_MODULE_6_ionic_native__["a" /* SMS */].send(_this.absentNumber[i], _this.message);
+                                console.log(_this.absentName[i], _this.absentNumber[i], _this.message);
+                            }
+                        }
+                        catch (e) {
+                            console.log(e);
+                        }
+                    }
+                }
+            ]
+        });
+        alert.present();
+    };
+    AttendancePage.prototype.goBack = function () {
+        this.navCtrl.pop();
     };
     AttendancePage.prototype.ionViewWillEnter = function () {
         this.tabBarElement.style.display = 'none';
@@ -638,24 +686,24 @@ var AttendancePage = (function () {
 }());
 AttendancePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-attendance',template:/*ion-inline-start:"E:\Work\Mini Project\Lapp-master\src\pages\attendance\attendance.html"*/'<!--\n  Generated template for the AttendancePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Attendance: {{this.dept}}</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n  <ion-list>\n    <ion-item *ngFor = "let regNo of regNo; let i = index" >\n      <ion-label> {{regNo}} {{name[i]}}  </ion-label>\n      <ion-checkbox [(ngModel)] = "attendanceArray[i]" (ionChange)="markAttendance(regNo,attendanceArray[i])" checked="true">  </ion-checkbox>\n    </ion-item>\n  </ion-list>\n\n  <ion-item>\n     <button ion-button type="button" (click)="confirmAttendance()">Confirm Attendance</button>\n   </ion-item>\n\n</ion-content>\n'/*ion-inline-end:"E:\Work\Mini Project\Lapp-master\src\pages\attendance\attendance.html"*/,
+        selector: 'page-attendance',template:/*ion-inline-start:"E:\Work\Mini Project\LicetApp\src\pages\attendance\attendance.html"*/'<!--\n  Generated template for the AttendancePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Attendance: {{this.dept}}</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n  <ion-list>\n    <ion-item *ngFor = "let regNo of regNo; let i = index" >\n      <ion-label> {{regNo}} {{name[i]}}  </ion-label>\n      <ion-checkbox [(ngModel)] = "attendanceArray[i]" (ionChange)="markAttendance(regNo,attendanceArray[i])" checked="true">  </ion-checkbox>\n    </ion-item>\n  </ion-list>\n\n  <ion-item>\n     <button ion-button type="button" (click)="confirmAttendance()">Confirm Attendance</button>\n     <button ion-button type="button" (click)="goBack()">Back</button>\n   </ion-item>\n\n</ion-content>\n'/*ion-inline-end:"E:\Work\Mini Project\LicetApp\src\pages\attendance\attendance.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__["a" /* AngularFireAuth */], __WEBPACK_IMPORTED_MODULE_4_angularfire2_database__["a" /* AngularFireDatabase */], __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__["a" /* AngularFireAuth */], __WEBPACK_IMPORTED_MODULE_4_angularfire2_database__["a" /* AngularFireDatabase */], __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */]])
 ], AttendancePage);
 
 //# sourceMappingURL=attendance.js.map
 
 /***/ }),
 
-/***/ 220:
+/***/ 409:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ReportPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_database__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_database__ = __webpack_require__(49);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -706,6 +754,9 @@ var ReportPage = (function () {
         });
         console.log("The absentees are " + this.absentArray);
     }
+    ReportPage.prototype.goBack = function () {
+        this.navCtrl.pop();
+    };
     ReportPage.prototype.ionViewWillEnter = function () {
         this.tabBarElement.style.display = 'none';
     };
@@ -716,7 +767,7 @@ var ReportPage = (function () {
 }());
 ReportPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-report',template:/*ion-inline-start:"E:\Work\Mini Project\Lapp-master\src\pages\report\report.html"*/'<!--\n  Generated template for the ReportPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>report</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-list>\n    <ion-item *ngFor = "let absentees of absentArray">\n      <ion-label> {{absentees}} </ion-label>\n    </ion-item>\n  </ion-list>\n\n\n</ion-content>\n'/*ion-inline-end:"E:\Work\Mini Project\Lapp-master\src\pages\report\report.html"*/,
+        selector: 'page-report',template:/*ion-inline-start:"E:\Work\Mini Project\LicetApp\src\pages\report\report.html"*/'<!--\n  Generated template for the ReportPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar hideBackButton>\n    <ion-title>report</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-list>\n    <ion-item *ngFor = "let absentees of absentArray">\n      <ion-label> {{absentees}} </ion-label>\n    </ion-item>\n  </ion-list>\n\n  <ion-list>\n    <ion-item>\n        <button ion-button type = "button" (click)="goBack()">Back</button>\n    </ion-item>\n  </ion-list>\n\n</ion-content>\n'/*ion-inline-end:"E:\Work\Mini Project\LicetApp\src\pages\report\report.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__["a" /* AngularFireAuth */], __WEBPACK_IMPORTED_MODULE_3_angularfire2_database__["a" /* AngularFireDatabase */]])
 ], ReportPage);
@@ -725,15 +776,15 @@ ReportPage = __decorate([
 
 /***/ }),
 
-/***/ 336:
+/***/ 525:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ResetPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase_app__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase_app__ = __webpack_require__(79);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase_app___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_firebase_app__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -834,7 +885,7 @@ var ResetPage = (function () {
 }());
 ResetPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-reset',template:/*ion-inline-start:"E:\Work\Mini Project\Lapp-master\src\pages\reset\reset.html"*/'<!--\n  Generated template for the ResetPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Reset Page</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content class="background">\n  <div class="list card animated bounceInRight">\n  <ion-card >\n    <ion-card-header>\n      Password Reset\n    </ion-card-header>\n    <ion-card-content>\n      <ion-list no-lines>\n        <ion-item>\n            <img class="circle"src="../img/logo.jpg" alt="your image">\n        </ion-item>\n        <ion-item>\n\n          <ion-label floating>EmailId</ion-label>\n          <ion-input type="text" name="email" [(ngModel)]="email"></ion-input>\n        </ion-item>\n\n\n        <button ion-button outline block color="danger"  (click)="resetPassword(email)">Login</button>\n      </ion-list>\n    </ion-card-content>\n  </ion-card>\n</div>\n</ion-content>\n'/*ion-inline-end:"E:\Work\Mini Project\Lapp-master\src\pages\reset\reset.html"*/,
+        selector: 'page-reset',template:/*ion-inline-start:"E:\Work\Mini Project\LicetApp\src\pages\reset\reset.html"*/'<!--\n  Generated template for the ResetPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Reset Page</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content class="background">\n  <div class="list card animated bounceInRight">\n  <ion-card >\n    <ion-card-header>\n      Password Reset\n    </ion-card-header>\n    <ion-card-content>\n      <ion-list no-lines>\n        <ion-item>\n            <img class="circle"src="../img/logo.jpg" alt="your image">\n        </ion-item>\n        <ion-item>\n\n          <ion-label floating>EmailId</ion-label>\n          <ion-input type="text" name="email" [(ngModel)]="email"></ion-input>\n        </ion-item>\n\n\n        <button ion-button outline block color="danger"  (click)="resetPassword(email)">Login</button>\n      </ion-list>\n    </ion-card-content>\n  </ion-card>\n</div>\n</ion-content>\n'/*ion-inline-end:"E:\Work\Mini Project\LicetApp\src\pages\reset\reset.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__["a" /* AngularFireAuth */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
 ], ResetPage);
@@ -843,16 +894,16 @@ ResetPage = __decorate([
 
 /***/ }),
 
-/***/ 337:
+/***/ 526:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProfileEditPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_database__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__profile_profile__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_database__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__profile_profile__ = __webpack_require__(137);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -914,7 +965,7 @@ var ProfileEditPage = (function () {
 }());
 ProfileEditPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-profile-edit',template:/*ion-inline-start:"E:\Work\Mini Project\Lapp-master\src\pages\profile-edit\profile-edit.html"*/'<!--\n  Generated template for the ProfileEditPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Profile Edit</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content class="background">\n  <div class="list card animated bounceInRight">\n  <ion-card >\n\n    <ion-card-content>\n      <ion-list no-lines>\n\n        <ion-item>\n            <img class="circle" src="../img/logo.jpg" alt="your image">\n        </ion-item>\n\n        <ion-item>\n\n            <ion-label floating>FirstName</ion-label>\n            <ion-input type="text" name="fname" [(ngModel)]="profiledetails.fname"></ion-input>\n        </ion-item>\n\n        <ion-item>\n\n            <ion-label floating>LastName</ion-label>\n            <ion-input type="text" name="lname" [(ngModel)]="profiledetails.lname"></ion-input>\n        </ion-item>\n\n        <ion-item>\n            <ion-label><b>Deptarment</b></ion-label>\n\n        </ion-item>\n\n        <ion-list radio-group [(ngModel)]="profiledetails.dept">\n              <ion-item>\n                <ion-label>CSE</ion-label>\n                <ion-radio value="CSE" checked></ion-radio>\n              </ion-item>\n              <ion-item>\n                <ion-label>MECH</ion-label>\n                <ion-radio value="MECH"></ion-radio>\n              </ion-item>\n              <ion-item>\n                <ion-label>IT</ion-label>\n                <ion-radio value="IT" ></ion-radio>\n              </ion-item>\n              <ion-item>\n                <ion-label>ECE</ion-label>\n                <ion-radio value="ECE" ></ion-radio>\n              </ion-item>\n              <ion-item>\n                <ion-label>EEE</ion-label>\n                <ion-radio value="EEE" ></ion-radio>\n              </ion-item>\n        </ion-list>\n\n        <button ion-button outline block color="danger" id="loginBtn" (click)="create(profiledetails)">Update</button>\n      </ion-list>\n    </ion-card-content>\n  </ion-card>\n</div>\n</ion-content>\n'/*ion-inline-end:"E:\Work\Mini Project\Lapp-master\src\pages\profile-edit\profile-edit.html"*/,
+        selector: 'page-profile-edit',template:/*ion-inline-start:"E:\Work\Mini Project\LicetApp\src\pages\profile-edit\profile-edit.html"*/'<!--\n  Generated template for the ProfileEditPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Profile Edit</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content class="background">\n  <div class="list card animated bounceInRight">\n  <ion-card >\n\n    <ion-card-content>\n      <ion-list no-lines>\n\n        <ion-item>\n            <img class="circle" src="../img/logo.jpg" alt="your image">\n        </ion-item>\n\n        <ion-item>\n\n            <ion-label floating>FirstName</ion-label>\n            <ion-input type="text" name="fname" [(ngModel)]="profiledetails.fname"></ion-input>\n        </ion-item>\n\n        <ion-item>\n\n            <ion-label floating>LastName</ion-label>\n            <ion-input type="text" name="lname" [(ngModel)]="profiledetails.lname"></ion-input>\n        </ion-item>\n\n        <ion-item>\n            <ion-label><b>Deptarment</b></ion-label>\n\n        </ion-item>\n\n        <ion-list radio-group [(ngModel)]="profiledetails.dept">\n              <ion-item>\n                <ion-label>CSE</ion-label>\n                <ion-radio value="CSE" checked></ion-radio>\n              </ion-item>\n              <ion-item>\n                <ion-label>MECH</ion-label>\n                <ion-radio value="MECH"></ion-radio>\n              </ion-item>\n              <ion-item>\n                <ion-label>IT</ion-label>\n                <ion-radio value="IT" ></ion-radio>\n              </ion-item>\n              <ion-item>\n                <ion-label>ECE</ion-label>\n                <ion-radio value="ECE" ></ion-radio>\n              </ion-item>\n              <ion-item>\n                <ion-label>EEE</ion-label>\n                <ion-radio value="EEE" ></ion-radio>\n              </ion-item>\n        </ion-list>\n\n        <button ion-button outline block color="danger" id="loginBtn" (click)="create(profiledetails)">Update</button>\n      </ion-list>\n    </ion-card-content>\n  </ion-card>\n</div>\n</ion-content>\n'/*ion-inline-end:"E:\Work\Mini Project\LicetApp\src\pages\profile-edit\profile-edit.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__["a" /* AngularFireAuth */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
         __WEBPACK_IMPORTED_MODULE_3_angularfire2_database__["a" /* AngularFireDatabase */]])
@@ -924,14 +975,14 @@ ProfileEditPage = __decorate([
 
 /***/ }),
 
-/***/ 338:
+/***/ 527:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(339);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(355);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_take__ = __webpack_require__(431);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(528);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(532);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_take__ = __webpack_require__(274);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_take___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_take__);
 
 
@@ -941,31 +992,31 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 355:
+/***/ 532:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* unused harmony export config */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(395);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_forms__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_Student_Student__ = __webpack_require__(206);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_testtab_testtab__ = __webpack_require__(207);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_Professor_Professor__ = __webpack_require__(110);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_report_report__ = __webpack_require__(220);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_profile_profile__ = __webpack_require__(113);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_tabs_tabs__ = __webpack_require__(205);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_reset_reset__ = __webpack_require__(336);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_profile_edit_profile_edit__ = __webpack_require__(337);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_attendance_attendance__ = __webpack_require__(219);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ionic_native_status_bar__ = __webpack_require__(201);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_native_splash_screen__ = __webpack_require__(204);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_angularfire2__ = __webpack_require__(430);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_angularfire2_auth__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_angularfire2_database__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(569);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_forms__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_Student_Student__ = __webpack_require__(240);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_testtab_testtab__ = __webpack_require__(241);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_Professor_Professor__ = __webpack_require__(242);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_report_report__ = __webpack_require__(409);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_profile_profile__ = __webpack_require__(137);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_tabs_tabs__ = __webpack_require__(239);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_reset_reset__ = __webpack_require__(525);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_profile_edit_profile_edit__ = __webpack_require__(526);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_attendance_attendance__ = __webpack_require__(255);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ionic_native_status_bar__ = __webpack_require__(234);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_native_splash_screen__ = __webpack_require__(238);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_angularfire2__ = __webpack_require__(851);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_angularfire2_auth__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_angularfire2_database__ = __webpack_require__(49);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1052,16 +1103,16 @@ AppModule = __decorate([
 
 /***/ }),
 
-/***/ 395:
+/***/ 569:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(201);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(204);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_tabs_tabs__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(234);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(238);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_tabs_tabs__ = __webpack_require__(239);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1089,7 +1140,7 @@ var MyApp = (function () {
     return MyApp;
 }());
 MyApp = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"E:\Work\Mini Project\Lapp-master\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"E:\Work\Mini Project\Lapp-master\src\app\app.html"*/
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"E:\Work\Mini Project\LicetApp\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"E:\Work\Mini Project\LicetApp\src\app\app.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
 ], MyApp);
@@ -1098,240 +1149,240 @@ MyApp = __decorate([
 
 /***/ }),
 
-/***/ 429:
+/***/ 850:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./af": 221,
-	"./af.js": 221,
-	"./ar": 222,
-	"./ar-dz": 223,
-	"./ar-dz.js": 223,
-	"./ar-kw": 224,
-	"./ar-kw.js": 224,
-	"./ar-ly": 225,
-	"./ar-ly.js": 225,
-	"./ar-ma": 226,
-	"./ar-ma.js": 226,
-	"./ar-sa": 227,
-	"./ar-sa.js": 227,
-	"./ar-tn": 228,
-	"./ar-tn.js": 228,
-	"./ar.js": 222,
-	"./az": 229,
-	"./az.js": 229,
-	"./be": 230,
-	"./be.js": 230,
-	"./bg": 231,
-	"./bg.js": 231,
-	"./bn": 232,
-	"./bn.js": 232,
-	"./bo": 233,
-	"./bo.js": 233,
-	"./br": 234,
-	"./br.js": 234,
-	"./bs": 235,
-	"./bs.js": 235,
-	"./ca": 236,
-	"./ca.js": 236,
-	"./cs": 237,
-	"./cs.js": 237,
-	"./cv": 238,
-	"./cv.js": 238,
-	"./cy": 239,
-	"./cy.js": 239,
-	"./da": 240,
-	"./da.js": 240,
-	"./de": 241,
-	"./de-at": 242,
-	"./de-at.js": 242,
-	"./de-ch": 243,
-	"./de-ch.js": 243,
-	"./de.js": 241,
-	"./dv": 244,
-	"./dv.js": 244,
-	"./el": 245,
-	"./el.js": 245,
-	"./en-au": 246,
-	"./en-au.js": 246,
-	"./en-ca": 247,
-	"./en-ca.js": 247,
-	"./en-gb": 248,
-	"./en-gb.js": 248,
-	"./en-ie": 249,
-	"./en-ie.js": 249,
-	"./en-nz": 250,
-	"./en-nz.js": 250,
-	"./eo": 251,
-	"./eo.js": 251,
-	"./es": 252,
-	"./es-do": 253,
-	"./es-do.js": 253,
-	"./es.js": 252,
-	"./et": 254,
-	"./et.js": 254,
-	"./eu": 255,
-	"./eu.js": 255,
-	"./fa": 256,
-	"./fa.js": 256,
-	"./fi": 257,
-	"./fi.js": 257,
-	"./fo": 258,
-	"./fo.js": 258,
-	"./fr": 259,
-	"./fr-ca": 260,
-	"./fr-ca.js": 260,
-	"./fr-ch": 261,
-	"./fr-ch.js": 261,
-	"./fr.js": 259,
-	"./fy": 262,
-	"./fy.js": 262,
-	"./gd": 263,
-	"./gd.js": 263,
-	"./gl": 264,
-	"./gl.js": 264,
-	"./gom-latn": 265,
-	"./gom-latn.js": 265,
-	"./he": 266,
-	"./he.js": 266,
-	"./hi": 267,
-	"./hi.js": 267,
-	"./hr": 268,
-	"./hr.js": 268,
-	"./hu": 269,
-	"./hu.js": 269,
-	"./hy-am": 270,
-	"./hy-am.js": 270,
-	"./id": 271,
-	"./id.js": 271,
-	"./is": 272,
-	"./is.js": 272,
-	"./it": 273,
-	"./it.js": 273,
-	"./ja": 274,
-	"./ja.js": 274,
-	"./jv": 275,
-	"./jv.js": 275,
-	"./ka": 276,
-	"./ka.js": 276,
-	"./kk": 277,
-	"./kk.js": 277,
-	"./km": 278,
-	"./km.js": 278,
-	"./kn": 279,
-	"./kn.js": 279,
-	"./ko": 280,
-	"./ko.js": 280,
-	"./ky": 281,
-	"./ky.js": 281,
-	"./lb": 282,
-	"./lb.js": 282,
-	"./lo": 283,
-	"./lo.js": 283,
-	"./lt": 284,
-	"./lt.js": 284,
-	"./lv": 285,
-	"./lv.js": 285,
-	"./me": 286,
-	"./me.js": 286,
-	"./mi": 287,
-	"./mi.js": 287,
-	"./mk": 288,
-	"./mk.js": 288,
-	"./ml": 289,
-	"./ml.js": 289,
-	"./mr": 290,
-	"./mr.js": 290,
-	"./ms": 291,
-	"./ms-my": 292,
-	"./ms-my.js": 292,
-	"./ms.js": 291,
-	"./my": 293,
-	"./my.js": 293,
-	"./nb": 294,
-	"./nb.js": 294,
-	"./ne": 295,
-	"./ne.js": 295,
-	"./nl": 296,
-	"./nl-be": 297,
-	"./nl-be.js": 297,
-	"./nl.js": 296,
-	"./nn": 298,
-	"./nn.js": 298,
-	"./pa-in": 299,
-	"./pa-in.js": 299,
-	"./pl": 300,
-	"./pl.js": 300,
-	"./pt": 301,
-	"./pt-br": 302,
-	"./pt-br.js": 302,
-	"./pt.js": 301,
-	"./ro": 303,
-	"./ro.js": 303,
-	"./ru": 304,
-	"./ru.js": 304,
-	"./sd": 305,
-	"./sd.js": 305,
-	"./se": 306,
-	"./se.js": 306,
-	"./si": 307,
-	"./si.js": 307,
-	"./sk": 308,
-	"./sk.js": 308,
-	"./sl": 309,
-	"./sl.js": 309,
-	"./sq": 310,
-	"./sq.js": 310,
-	"./sr": 311,
-	"./sr-cyrl": 312,
-	"./sr-cyrl.js": 312,
-	"./sr.js": 311,
-	"./ss": 313,
-	"./ss.js": 313,
-	"./sv": 314,
-	"./sv.js": 314,
-	"./sw": 315,
-	"./sw.js": 315,
-	"./ta": 316,
-	"./ta.js": 316,
-	"./te": 317,
-	"./te.js": 317,
-	"./tet": 318,
-	"./tet.js": 318,
-	"./th": 319,
-	"./th.js": 319,
-	"./tl-ph": 320,
-	"./tl-ph.js": 320,
-	"./tlh": 321,
-	"./tlh.js": 321,
-	"./tr": 322,
-	"./tr.js": 322,
-	"./tzl": 323,
-	"./tzl.js": 323,
-	"./tzm": 324,
-	"./tzm-latn": 325,
-	"./tzm-latn.js": 325,
-	"./tzm.js": 324,
-	"./uk": 326,
-	"./uk.js": 326,
-	"./ur": 327,
-	"./ur.js": 327,
-	"./uz": 328,
-	"./uz-latn": 329,
-	"./uz-latn.js": 329,
-	"./uz.js": 328,
-	"./vi": 330,
-	"./vi.js": 330,
-	"./x-pseudo": 331,
-	"./x-pseudo.js": 331,
-	"./yo": 332,
-	"./yo.js": 332,
-	"./zh-cn": 333,
-	"./zh-cn.js": 333,
-	"./zh-hk": 334,
-	"./zh-hk.js": 334,
-	"./zh-tw": 335,
-	"./zh-tw.js": 335
+	"./af": 410,
+	"./af.js": 410,
+	"./ar": 411,
+	"./ar-dz": 412,
+	"./ar-dz.js": 412,
+	"./ar-kw": 413,
+	"./ar-kw.js": 413,
+	"./ar-ly": 414,
+	"./ar-ly.js": 414,
+	"./ar-ma": 415,
+	"./ar-ma.js": 415,
+	"./ar-sa": 416,
+	"./ar-sa.js": 416,
+	"./ar-tn": 417,
+	"./ar-tn.js": 417,
+	"./ar.js": 411,
+	"./az": 418,
+	"./az.js": 418,
+	"./be": 419,
+	"./be.js": 419,
+	"./bg": 420,
+	"./bg.js": 420,
+	"./bn": 421,
+	"./bn.js": 421,
+	"./bo": 422,
+	"./bo.js": 422,
+	"./br": 423,
+	"./br.js": 423,
+	"./bs": 424,
+	"./bs.js": 424,
+	"./ca": 425,
+	"./ca.js": 425,
+	"./cs": 426,
+	"./cs.js": 426,
+	"./cv": 427,
+	"./cv.js": 427,
+	"./cy": 428,
+	"./cy.js": 428,
+	"./da": 429,
+	"./da.js": 429,
+	"./de": 430,
+	"./de-at": 431,
+	"./de-at.js": 431,
+	"./de-ch": 432,
+	"./de-ch.js": 432,
+	"./de.js": 430,
+	"./dv": 433,
+	"./dv.js": 433,
+	"./el": 434,
+	"./el.js": 434,
+	"./en-au": 435,
+	"./en-au.js": 435,
+	"./en-ca": 436,
+	"./en-ca.js": 436,
+	"./en-gb": 437,
+	"./en-gb.js": 437,
+	"./en-ie": 438,
+	"./en-ie.js": 438,
+	"./en-nz": 439,
+	"./en-nz.js": 439,
+	"./eo": 440,
+	"./eo.js": 440,
+	"./es": 441,
+	"./es-do": 442,
+	"./es-do.js": 442,
+	"./es.js": 441,
+	"./et": 443,
+	"./et.js": 443,
+	"./eu": 444,
+	"./eu.js": 444,
+	"./fa": 445,
+	"./fa.js": 445,
+	"./fi": 446,
+	"./fi.js": 446,
+	"./fo": 447,
+	"./fo.js": 447,
+	"./fr": 448,
+	"./fr-ca": 449,
+	"./fr-ca.js": 449,
+	"./fr-ch": 450,
+	"./fr-ch.js": 450,
+	"./fr.js": 448,
+	"./fy": 451,
+	"./fy.js": 451,
+	"./gd": 452,
+	"./gd.js": 452,
+	"./gl": 453,
+	"./gl.js": 453,
+	"./gom-latn": 454,
+	"./gom-latn.js": 454,
+	"./he": 455,
+	"./he.js": 455,
+	"./hi": 456,
+	"./hi.js": 456,
+	"./hr": 457,
+	"./hr.js": 457,
+	"./hu": 458,
+	"./hu.js": 458,
+	"./hy-am": 459,
+	"./hy-am.js": 459,
+	"./id": 460,
+	"./id.js": 460,
+	"./is": 461,
+	"./is.js": 461,
+	"./it": 462,
+	"./it.js": 462,
+	"./ja": 463,
+	"./ja.js": 463,
+	"./jv": 464,
+	"./jv.js": 464,
+	"./ka": 465,
+	"./ka.js": 465,
+	"./kk": 466,
+	"./kk.js": 466,
+	"./km": 467,
+	"./km.js": 467,
+	"./kn": 468,
+	"./kn.js": 468,
+	"./ko": 469,
+	"./ko.js": 469,
+	"./ky": 470,
+	"./ky.js": 470,
+	"./lb": 471,
+	"./lb.js": 471,
+	"./lo": 472,
+	"./lo.js": 472,
+	"./lt": 473,
+	"./lt.js": 473,
+	"./lv": 474,
+	"./lv.js": 474,
+	"./me": 475,
+	"./me.js": 475,
+	"./mi": 476,
+	"./mi.js": 476,
+	"./mk": 477,
+	"./mk.js": 477,
+	"./ml": 478,
+	"./ml.js": 478,
+	"./mr": 479,
+	"./mr.js": 479,
+	"./ms": 480,
+	"./ms-my": 481,
+	"./ms-my.js": 481,
+	"./ms.js": 480,
+	"./my": 482,
+	"./my.js": 482,
+	"./nb": 483,
+	"./nb.js": 483,
+	"./ne": 484,
+	"./ne.js": 484,
+	"./nl": 485,
+	"./nl-be": 486,
+	"./nl-be.js": 486,
+	"./nl.js": 485,
+	"./nn": 487,
+	"./nn.js": 487,
+	"./pa-in": 488,
+	"./pa-in.js": 488,
+	"./pl": 489,
+	"./pl.js": 489,
+	"./pt": 490,
+	"./pt-br": 491,
+	"./pt-br.js": 491,
+	"./pt.js": 490,
+	"./ro": 492,
+	"./ro.js": 492,
+	"./ru": 493,
+	"./ru.js": 493,
+	"./sd": 494,
+	"./sd.js": 494,
+	"./se": 495,
+	"./se.js": 495,
+	"./si": 496,
+	"./si.js": 496,
+	"./sk": 497,
+	"./sk.js": 497,
+	"./sl": 498,
+	"./sl.js": 498,
+	"./sq": 499,
+	"./sq.js": 499,
+	"./sr": 500,
+	"./sr-cyrl": 501,
+	"./sr-cyrl.js": 501,
+	"./sr.js": 500,
+	"./ss": 502,
+	"./ss.js": 502,
+	"./sv": 503,
+	"./sv.js": 503,
+	"./sw": 504,
+	"./sw.js": 504,
+	"./ta": 505,
+	"./ta.js": 505,
+	"./te": 506,
+	"./te.js": 506,
+	"./tet": 507,
+	"./tet.js": 507,
+	"./th": 508,
+	"./th.js": 508,
+	"./tl-ph": 509,
+	"./tl-ph.js": 509,
+	"./tlh": 510,
+	"./tlh.js": 510,
+	"./tr": 511,
+	"./tr.js": 511,
+	"./tzl": 512,
+	"./tzl.js": 512,
+	"./tzm": 513,
+	"./tzm-latn": 514,
+	"./tzm-latn.js": 514,
+	"./tzm.js": 513,
+	"./uk": 515,
+	"./uk.js": 515,
+	"./ur": 516,
+	"./ur.js": 516,
+	"./uz": 517,
+	"./uz-latn": 518,
+	"./uz-latn.js": 518,
+	"./uz.js": 517,
+	"./vi": 519,
+	"./vi.js": 519,
+	"./x-pseudo": 520,
+	"./x-pseudo.js": 520,
+	"./yo": 521,
+	"./yo.js": 521,
+	"./zh-cn": 522,
+	"./zh-cn.js": 522,
+	"./zh-hk": 523,
+	"./zh-hk.js": 523,
+	"./zh-tw": 524,
+	"./zh-tw.js": 524
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -1347,9 +1398,9 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 429;
+webpackContext.id = 850;
 
 /***/ })
 
-},[338]);
+},[527]);
 //# sourceMappingURL=main.js.map

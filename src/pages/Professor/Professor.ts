@@ -55,11 +55,11 @@ export class ProfessorPage {
                 console.log(data.fname);
                 if(data.fname!=undefined)
                 {
-                    this.navCtrl.setRoot(ProfilePage);
+                    this.navCtrl.push(ProfilePage);
                 }
                 else
                 {
-                    this.navCtrl.setRoot(ProfileEditPage);
+                    this.navCtrl.push(ProfileEditPage);
                 }
           });
 

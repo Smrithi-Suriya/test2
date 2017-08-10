@@ -62,7 +62,9 @@ export class ReportPage {
     });
     console.log("The absentees are "+this.absentArray);
   }
-
+goBack(){
+  this.navCtrl.pop();
+}
   ionViewWillEnter() {
 
     this.tabBarElement.style.display = 'none';

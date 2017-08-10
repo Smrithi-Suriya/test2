@@ -7,6 +7,8 @@ import {ProfileDetails} from '../../models/profileDetails';
 import {AttendancePage} from '../attendance/attendance';
 import {ReportPage} from '../report/report';
 import { AlertController } from 'ionic-angular';
+//import {BarcodeScanner,BarcodeScannerOptions} from '@ionic-native/barcode-scanner';
+
 
 
 import {ProfessorPage} from '../Professor/Professor';
@@ -39,7 +41,7 @@ export class ProfilePage {
 
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,private afauth:AngularFireAuth, private tc:ToastController,private alertCtrl: AlertController, private afData:AngularFireDatabase) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,/*private bar:BarcodeScanner,*/private afauth:AngularFireAuth, private tc:ToastController,private alertCtrl: AlertController, private afData:AngularFireDatabase) {
 
     this.tabBarElement = document.querySelector('.tabbar.show-tabbar');
     this.initializeYear();
@@ -52,7 +54,12 @@ export class ProfilePage {
 
 
   }
-
+  /*
+  async scancode()
+  {
+    const res = await this.bar.scan();
+    console.log(res);
+  }*/
 
   years: any[];
   departments: any[];
@@ -77,16 +84,12 @@ export class ProfilePage {
    sSemester: any;
    sPeriod:any;
 
-
-
   dateChange(today){
     this.year = today.substr(0, 4);
     this.month = today.substr(5, 2);
     this.date = today.substr(8, 2)
-    console.log(this.date + ' '+ this.month+' '+this.year);
-      
+    console.log(this.date + ' '+ this.month+' '+this.year);      
   }
-
 
   initializeYear(){
     this.years = [
@@ -114,15 +117,11 @@ export class ProfilePage {
     ];
   }
 
- 
-
   setPeriod(sPeriod) {
       this.selectedPeriods = this.sPeriod;
-
   }
 
   setDepartmentValues(sYear,sSemester,sDepartment) {
-
     if(sSemester!=undefined && sDepartment!=undefined){
       this.setSubjectValues(sYear,sSemester,sDepartment);
     }      
@@ -186,11 +185,9 @@ export class ProfilePage {
     if (time.isBetween(period1, period2)) {
       this.period = '1';
     }
-
     if (time.isBetween(period2, period3)) {
       this.period = '2';
     }
-
     if (time.isBetween(period3, period4)) {
       this.period = '3';
     }
@@ -244,7 +241,7 @@ export class ProfilePage {
   {
       console.log("logout button fired");
       this.afauth.auth.signOut();
-      this.navCtrl.setRoot(ProfessorPage);
+      this.navCtrl.pop();
   }
 
   markAttendance(sYear, sDepartment, sSubject)
@@ -260,7 +257,7 @@ export class ProfilePage {
     }
     else{
       console.log("attendance firered"+sYear.name+sDepartment.name+this.selectedPeriods);
-      this.navCtrl.setRoot(AttendancePage,{
+      this.navCtrl.push(AttendancePage,{
         param1: sYear.name,
         param2: sDepartment.name,
         param3:this.selectedPeriods,
@@ -286,7 +283,7 @@ export class ProfilePage {
     }
     else{
 
-      this.navCtrl.setRoot(ReportPage,{
+      this.navCtrl.push(ReportPage,{
         param1: sYear.name,
         param2: sDepartment.name,
         param3:this.selectedPeriods,
