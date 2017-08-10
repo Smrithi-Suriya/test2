@@ -15,17 +15,18 @@
 
 
 <ion-content padding>
+  <button ion-button type="button" (click)="checkAll()" class="con">Select All</button>
 
   <ion-list>
-    <ion-item *ngFor = "let regNo of regNo; let i = index" >
-      <ion-label> {{regNo}} {{name[i]}}  </ion-label>
+    <ion-item class="mark" *ngFor = "let regNo of regNo; let i = index" >
+      <ion-label class="select"> {{regNo}} {{name[i]}}  </ion-label>
       <ion-checkbox [(ngModel)] = "attendanceArray[i]" (ionChange)="markAttendance(regNo,attendanceArray[i])" checked="true">  </ion-checkbox>
     </ion-item>
   </ion-list>
 
   <ion-item>
-     <button ion-button type="button" (click)="confirmAttendance()">Confirm Attendance</button>
-     <button ion-button type="button" (click)="goBack()">Back</button>
+     <button ion-button type="button" (click)="confirmAttendance()" class="con">Confirm Attendance</button>
+     <button ion-button type="button" (click)="goBack()" class="con">Back</button>
    </ion-item>
 
 </ion-content>

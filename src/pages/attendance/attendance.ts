@@ -46,6 +46,8 @@ export class AttendancePage {
   public attendance:Array<any> = [];
   public regNo:Array<any> = [];
   attendanceArray: Array<any> = [];
+  attendanceArray2: Array<any> = [];
+
   public presentArray: Array<any> = [];
   public absentArray: Array<any> = [];
   public index: number;
@@ -53,6 +55,7 @@ export class AttendancePage {
   message:string;
   absentName:Array <any>=[];
   absentNumber:Array <any>=[];
+  flag:any;
 
 
   form: FormGroup;
@@ -66,7 +69,7 @@ export class AttendancePage {
   namedetails2:any;
   constructor(public navCtrl: NavController,private alertCtrl: AlertController, public navParams: NavParams,private afauth:AngularFireAuth,private afData:AngularFireDatabase, fb: FormBuilder)
   {
-
+    this.flag = 0;
     
     this.tabBarElement = document.querySelector('.tabbar.show-tabbar');
 
@@ -94,26 +97,36 @@ export class AttendancePage {
               this.namedetails2 = this.afData.object('Namelist/Namelist/'+this.dept+'/'+this.year+' Year/'+i);
               this.namedetails2.subscribe(data1 =>
               {
-
                     this.attendance.push(data1.Attendance);
                     this.name.push(data1.Name);
-
               });
           }
     });
 
 
   }
+checkAll(){
+   for(let i in this.regNo){
+       this.attendanceArray[i] = "true";
+       this.markAttendance(this.data[i],this.attendanceArray[i]);
+   }
+}
+
+
+
 
 
 
 markAttendance(test,attendanceArray){
-  if(attendanceArray){
-    this.presentArray.push(test);
-  }
-  else{
-    this.presentArray.splice(this.presentArray.indexOf(test),1);
-  }
+    if(attendanceArray){
+      this.presentArray.push(test);
+    }
+    else{
+      this.presentArray.splice(this.presentArray.indexOf(test),1);
+    }
+  
+  //console.log("Present Array: "+this.presentArray);
+  //console.log("Absent Array: "+this.absentArray);
 }
 
 confirmAttendance(){

@@ -6,7 +6,7 @@
 -->
 <ion-header>
   <ion-navbar color="primary">
-        <ion-title>Profile page</ion-title>
+        <ion-title class="toolbar-background">Profile page</ion-title>
     <ion-buttons right color="danger">
       <button ion-button (click)="logout()">Logout</button>
     </ion-buttons>
@@ -17,18 +17,18 @@
 <ion-content padding>
 	<ion-list>
 		<ion-item>
-			<ion-label>Username:{{(profiledetails|async)?.fname}}</ion-label>
+			<ion-label class="parameter">Username:{{(profiledetails|async)?.fname}}</ion-label>
 		</ion-item>
 
   <ion-item>
-    <ion-label>Period No</ion-label>
+    <ion-label class="parameter">Period No</ion-label>
     <ion-select (ionChange)="setPeriod(sPeriod)" [(ngModel)]="sPeriod" >
       <ion-option *ngFor="let period of periods()">{{period}}</ion-option>
     </ion-select>
   </ion-item>
 
   <ion-item>
-     <ion-label><strong>Year</strong></ion-label>
+     <ion-label class="parameter"><strong>Year</strong></ion-label>
      <ion-select (ionChange)="setDepartmentValues(sYear,sSemester,sDepartment)" [(ngModel)]="sYear">
           <ion-option [value]="sYear" *ngFor = "let sYear of years">{{sYear.name}}  </ion-option>
     </ion-select>
@@ -37,7 +37,7 @@
 
 
 <ion-item>
-    <ion-label>Semester</ion-label>
+    <ion-label class="parameter">Semester</ion-label>
     <ion-select  [(ngModel)]="sSemester" (ionChange)="setSubjectValues(sYear,sSemester,sDepartment)">
       <ion-option [value]="sSemester" *ngFor="let sSemester of semesters ">{{sSemester.name}}</ion-option>
     </ion-select>
@@ -47,7 +47,7 @@
 
 
 <ion-item>
-      <ion-label>Department</ion-label>
+      <ion-label class="parameter">Department</ion-label>
       <ion-select (ionChange)="setSubjectValues(sYear,sSemester,sDepartment)" [(ngModel)]="sDepartment">
          <ion-option [value]="sDepartment" *ngFor = "let sDepartment of selectedDepartments">{{sDepartment.name}}</ion-option>
       </ion-select>
@@ -58,7 +58,7 @@
 
 
   <ion-item >
-    <ion-label> Subject </ion-label>
+    <ion-label class="parameter"> Subject </ion-label>
       <ion-select [(ngModel)]="sSubject" (ionChange)="finalizeSubjectValue(sSubject)">
         <ion-option [value]="sSubject" *ngFor="let sSubject of selectedSubjects" >{{sSubject}}</ion-option>
       </ion-select>
@@ -67,15 +67,15 @@
 
 
   <ion-item>
-    <ion-label> Date </ion-label>
+    <ion-label class="parameter"> Date </ion-label>
     <ion-datetime displayFormat="DD-MM-YYYY" [(ngModel)]="today" (ionChange)="dateChange(today)"></ion-datetime>
   </ion-item>
 
-  <button ion-button block style="background-color: navy;" (click)="markAttendance(sYear,sDepartment,sSubject)">
+  <button ion-button block style="background-color: navy;" (click)="markAttendance(sYear,sDepartment,sSubject)" class="log">
     MARK ATTENDANCE</button><br>
 
 
-  <button ion-button block style="background-color: navy;" (click)="checkAttendance(sYear,sDepartment,sSemester,sSubject)">
+  <button ion-button block style="background-color: navy;" (click)="checkAttendance(sYear,sDepartment,sSemester,sSubject)" class="log">
     GENERATE REPORT</button><br>
 <!--
   <br>
