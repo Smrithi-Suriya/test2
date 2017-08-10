@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .ion-ios-add:before {
   content: "\f102";
 }
@@ -27516,7 +27517,16 @@ page-professor .toolbar-background {
   background-color: #6f6fdc;
 }
 
-page-professor .circle {
+page-professor div.logoImage {
+  content: url(../img/logo.jpg);
+  width: 100px;
+  height: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+page-professor ​
+.circle {
   width: 100px;
   height: 100px;
   overflow: hidden;
