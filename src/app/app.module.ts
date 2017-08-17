@@ -23,7 +23,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
-
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
 export const config = {
    apiKey: "AIzaSyCwsZwBg8oiNGKvXP3TNGHsRpOyc2CmAVM",
@@ -77,6 +77,7 @@ export const config = {
   providers: [
     StatusBar,
     SplashScreen,
+    BarcodeScanner,
 
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]

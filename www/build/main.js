@@ -1,6 +1,6 @@
 webpackJsonp([0],{
 
-/***/ 137:
+/***/ 138:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -11,8 +11,9 @@ webpackJsonp([0],{
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_database__ = __webpack_require__(49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__attendance_attendance__ = __webpack_require__(255);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__report_report__ = __webpack_require__(409);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_moment__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_moment__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_barcode_scanner__ = __webpack_require__(410);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_moment__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_moment__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -22,6 +23,42 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
 
 
 
@@ -37,11 +74,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * on Ionic pages and navigation.
  */
 var ProfilePage = (function () {
-    function ProfilePage(navCtrl, navParams, /*private bar:BarcodeScanner,*/ afauth, tc, alertCtrl, afData) {
+    function ProfilePage(navCtrl, navParams, bar, afauth, alertCtrl, afData) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.bar = bar;
         this.afauth = afauth;
-        this.tc = tc;
         this.alertCtrl = alertCtrl;
         this.afData = afData;
         this.period = "1";
@@ -61,6 +98,34 @@ var ProfilePage = (function () {
             "1", "2", "3", "4", "5", "6", "7", "8"
         ];
     };
+    ProfilePage.prototype.test = function () {
+        this.sYear = '4';
+        this.sSemester = "Odd";
+        this.setDepartmentValues("4", "Odd", "CSE");
+        this.sDepartment = "CSE";
+        //this.setSubjectValues("4","Odd","CSE");
+        this.sSubject = "RMT";
+    };
+    ProfilePage.prototype.scancode = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var scanRes, splitArray;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.bar.scan()];
+                    case 1:
+                        scanRes = _a.sent();
+                        console.log(scanRes);
+                        splitArray = scanRes.text.split("-");
+                        this.sYear = splitArray[0];
+                        this.sSemester = splitArray[1];
+                        this.setDepartmentValues(splitArray[0], splitArray[1], splitArray[2]);
+                        this.sDepartment = splitArray[2];
+                        this.sSubject = splitArray[3];
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
     ProfilePage.prototype.dateChange = function (today) {
         this.year = today.substr(0, 4);
         this.month = today.substr(5, 2);
@@ -68,27 +133,32 @@ var ProfilePage = (function () {
         console.log(this.date + ' ' + this.month + ' ' + this.year);
     };
     ProfilePage.prototype.initializeYear = function () {
+        /*
         this.years = [
-            { id: 1, name: '1' },
-            { id: 2, name: '2' },
-            { id: 3, name: '3' },
-            { id: 4, name: '4' }
-        ];
+          {id: 1, name: '1'},
+          {id: 2, name: '2'},
+          {id: 3, name: '3'},
+          {id: 4, name: '4'}
+        ];*/
+        this.years = ["1", "2", "3", "4"];
     };
     ProfilePage.prototype.initializeSemester = function () {
-        this.semesters = [
-            { id: 1, name: 'Odd' },
-            { id: 2, name: 'Even' }
-        ];
+        /* this.semesters = [
+           {id: 1, name: 'Odd'},
+           {id: 2, name: 'Even'}
+         ];*/
+        this.semesters = ["Odd", "Even"];
     };
     ProfilePage.prototype.initializeDepartment = function () {
+        /*
         this.departments = [
-            { id: 1, name: 'CSE' },
-            { id: 2, name: 'EEE' },
-            { id: 3, name: 'ECE' },
-            { id: 4, name: 'MECH' },
-            { id: 5, name: 'IT' }
-        ];
+          {id: 1, name: 'CSE'},
+          {id: 2, name: 'EEE'},
+          {id: 3, name: 'ECE'},
+          {id: 4, name: 'MECH'},
+          {id: 5, name: 'IT'}
+        ];*/
+        this.departments = ["CSE", "EEE", "ECE", "MECH", "IT"];
     };
     ProfilePage.prototype.setPeriod = function (sPeriod) {
         this.selectedPeriods = this.sPeriod;
@@ -102,16 +172,16 @@ var ProfilePage = (function () {
     ProfilePage.prototype.setSubjectValues = function (sYear, sSemester, sDepartment) {
         var _this = this;
         this.selectedSubjects = [];
-        this.selectedSemester = sSemester.name;
+        this.selectedSemester = sSemester;
         if (sSemester != undefined && sDepartment != undefined && sYear != undefined) {
-            this.subjects = this.afData.object('Subject/Subject/Year' + sYear.name + '/' + sSemester.name + '/' + sDepartment.name + '/');
+            this.subjects = this.afData.object('Subject/Subject/Year' + sYear + '/' + sSemester + '/' + sDepartment + '/');
             this.subjects.subscribe(function (data) {
                 var keys = Object.keys(data);
                 _this.data = keys;
                 for (var _i = 0, keys_1 = keys; _i < keys_1.length; _i++) {
                     var i = keys_1[_i];
                     _this.Key.push(i);
-                    _this.subjects = _this.afData.object('Subject/Subject/Year' + sYear.name + '/' + sSemester.name + '/' + sDepartment.name + '/' + i);
+                    _this.subjects = _this.afData.object('Subject/Subject/Year' + sYear + '/' + sSemester + '/' + sDepartment + '/' + i);
                     _this.subjects.subscribe(function (data1) {
                         _this.selectedSubjects.push(data1.$value);
                         console.log(_this.selectedSubjects);
@@ -132,55 +202,47 @@ var ProfilePage = (function () {
     ProfilePage.prototype.ionViewDidLoad = function () {
         var _this = this;
         console.log('ionViewDidLoad ProfilePage');
-        var time = __WEBPACK_IMPORTED_MODULE_6_moment__();
+        var time = __WEBPACK_IMPORTED_MODULE_7_moment__();
         var format = 'hh:mm:ss';
-        var period1 = __WEBPACK_IMPORTED_MODULE_6_moment__('8:00:00', format);
-        var period2 = __WEBPACK_IMPORTED_MODULE_6_moment__('9:00:00', format);
-        var period3 = __WEBPACK_IMPORTED_MODULE_6_moment__('10:10:00', format);
-        var period4 = __WEBPACK_IMPORTED_MODULE_6_moment__('11:00:00', format);
-        var period5 = __WEBPACK_IMPORTED_MODULE_6_moment__('11:50:00', format);
-        var period6 = __WEBPACK_IMPORTED_MODULE_6_moment__('13:20:00', format);
-        var period7 = __WEBPACK_IMPORTED_MODULE_6_moment__('14:20:00', format);
-        var period8 = __WEBPACK_IMPORTED_MODULE_6_moment__('15:10:00', format);
-        var period9 = __WEBPACK_IMPORTED_MODULE_6_moment__('23:10:00', format);
+        var period1 = __WEBPACK_IMPORTED_MODULE_7_moment__('0:00:00', format);
+        var period2 = __WEBPACK_IMPORTED_MODULE_7_moment__('9:00:00', format);
+        var period3 = __WEBPACK_IMPORTED_MODULE_7_moment__('10:10:00', format);
+        var period4 = __WEBPACK_IMPORTED_MODULE_7_moment__('11:00:00', format);
+        var period5 = __WEBPACK_IMPORTED_MODULE_7_moment__('11:50:00', format);
+        var period6 = __WEBPACK_IMPORTED_MODULE_7_moment__('13:20:00', format);
+        var period7 = __WEBPACK_IMPORTED_MODULE_7_moment__('14:20:00', format);
+        var period8 = __WEBPACK_IMPORTED_MODULE_7_moment__('15:10:00', format);
+        var period9 = __WEBPACK_IMPORTED_MODULE_7_moment__('23:59:59', format);
         if (time.isBetween(period1, period2)) {
-            this.period = '1';
+            this.sPeriod = '1';
         }
         if (time.isBetween(period2, period3)) {
-            this.period = '2';
+            this.sPeriod = '2';
         }
         if (time.isBetween(period3, period4)) {
-            this.period = '3';
+            this.sPeriod = '3';
         }
         if (time.isBetween(period4, period5)) {
-            this.period = '4';
+            this.sPeriod = '4';
         }
         if (time.isBetween(period5, period6)) {
-            this.period = '5';
+            this.sPeriod = '5';
         }
         if (time.isBetween(period6, period7)) {
-            this.period = '6';
+            this.sPeriod = '6';
         }
         if (time.isBetween(period7, period8)) {
-            this.period = '7';
+            this.sPeriod = '7';
         }
         if (time.isBetween(period8, period9)) {
-            this.period = '8';
+            this.sPeriod = '8';
         }
         this.afauth.authState.subscribe(function (data) {
             if (data && data.email && data.uid) {
                 console.log(data.email);
-                _this.tc.create({
-                    message: 'You are logged in,${{data.email}}',
-                    duration: 3000
-                }).present();
                 _this.profiledetails = _this.afData.object('Professor/' + data.uid);
             }
             else {
-                _this.tc.create({
-                    message: 'Something went wrong Bosco',
-                    duration: 3000
-                }).present();
             }
         });
     };
@@ -207,11 +269,11 @@ var ProfilePage = (function () {
             alert_1.present();
         }
         else {
-            console.log("attendance firered" + sYear.name + sDepartment.name + this.selectedPeriods);
+            console.log("attendance firered" + sYear + sDepartment + this.sPeriod);
             this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__attendance_attendance__["a" /* AttendancePage */], {
-                param1: sYear.name,
-                param2: sDepartment.name,
-                param3: this.selectedPeriods,
+                param1: sYear,
+                param2: sDepartment,
+                param3: this.sPeriod,
                 param4: this.selectedSemester,
                 param5: this.finalizedSubject,
                 param6: this.date,
@@ -231,9 +293,9 @@ var ProfilePage = (function () {
         }
         else {
             this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__report_report__["a" /* ReportPage */], {
-                param1: sYear.name,
-                param2: sDepartment.name,
-                param3: this.selectedPeriods,
+                param1: sYear,
+                param2: sDepartment,
+                param3: this.sPeriod,
                 param4: this.selectedSemester,
                 param5: this.finalizedSubject,
                 param6: this.date,
@@ -246,16 +308,16 @@ var ProfilePage = (function () {
 }());
 ProfilePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-profile',template:/*ion-inline-start:"E:\Work\Mini Project\LicetApp\src\pages\profile\profile.html"*/'<!--\n  Generated template for the ProfilePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="primary">\n        <ion-title class="toolbar-background">Profile page</ion-title>\n    <ion-buttons right color="danger">\n      <button ion-button (click)="logout()">Logout</button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n	<ion-list>\n		<ion-item>\n			<ion-label class="parameter">Username:{{(profiledetails|async)?.fname}}</ion-label>\n		</ion-item>\n\n  <ion-item>\n    <ion-label class="parameter">Period No</ion-label>\n    <ion-select (ionChange)="setPeriod(sPeriod)" [(ngModel)]="sPeriod" >\n      <ion-option *ngFor="let period of periods()">{{period}}</ion-option>\n    </ion-select>\n  </ion-item>\n\n  <ion-item>\n     <ion-label class="parameter"><strong>Year</strong></ion-label>\n     <ion-select (ionChange)="setDepartmentValues(sYear,sSemester,sDepartment)" [(ngModel)]="sYear">\n          <ion-option [value]="sYear" *ngFor = "let sYear of years">{{sYear.name}}  </ion-option>\n    </ion-select>\n    </ion-item>\n\n\n\n<ion-item>\n    <ion-label class="parameter">Semester</ion-label>\n    <ion-select  [(ngModel)]="sSemester" (ionChange)="setSubjectValues(sYear,sSemester,sDepartment)">\n      <ion-option [value]="sSemester" *ngFor="let sSemester of semesters ">{{sSemester.name}}</ion-option>\n    </ion-select>\n  </ion-item>\n\n\n\n\n<ion-item>\n      <ion-label class="parameter">Department</ion-label>\n      <ion-select (ionChange)="setSubjectValues(sYear,sSemester,sDepartment)" [(ngModel)]="sDepartment">\n         <ion-option [value]="sDepartment" *ngFor = "let sDepartment of selectedDepartments">{{sDepartment.name}}</ion-option>\n      </ion-select>\n </ion-item>\n\n\n\n\n\n  <ion-item >\n    <ion-label class="parameter"> Subject </ion-label>\n      <ion-select [(ngModel)]="sSubject" (ionChange)="finalizeSubjectValue(sSubject)">\n        <ion-option [value]="sSubject" *ngFor="let sSubject of selectedSubjects" >{{sSubject}}</ion-option>\n      </ion-select>\n\n  </ion-item>\n\n\n  <ion-item>\n    <ion-label class="parameter"> Date </ion-label>\n    <ion-datetime displayFormat="DD-MM-YYYY" [(ngModel)]="today" (ionChange)="dateChange(today)"></ion-datetime>\n  </ion-item>\n\n  <button ion-button block style="background-color: navy;" (click)="markAttendance(sYear,sDepartment,sSubject)" class="log">\n    MARK ATTENDANCE</button><br>\n\n\n  <button ion-button block style="background-color: navy;" (click)="checkAttendance(sYear,sDepartment,sSemester,sSubject)" class="log">\n    GENERATE REPORT</button><br>\n<!--\n  <br>\n  <button ion-button block style="background-color: navy;" type="button" (click)="scancode()">Scan Barcode</button>\n-->\n </ion-list>\n</ion-content>\n'/*ion-inline-end:"E:\Work\Mini Project\LicetApp\src\pages\profile\profile.html"*/,
+        selector: 'page-profile',template:/*ion-inline-start:"E:\Work\Mini Project\LicetApp\src\pages\profile\profile.html"*/'<!--\n  Generated template for the ProfilePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="primary">\n        <ion-title class="toolbar-background"><strong>Profile page</strong></ion-title>\n    <!--<ion-buttons right color="danger">\n      <button ion-button (click)="logout()">Logout</button>\n    </ion-buttons>-->\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n	<ion-list>\n		<ion-item>\n			<ion-label class="parameter"><strong>Username:{{(profiledetails|async)?.fname}}</strong></ion-label>\n		</ion-item>\n\n  <ion-item >\n    <ion-label class="parameter">Period No</ion-label>\n    <ion-select (ionChange)="setPeriod(sPeriod)" [(ngModel)]="sPeriod" >\n      <ion-option  *ngFor="let period of periods()">{{period}}</ion-option>\n    </ion-select>\n  </ion-item>\n\n  <ion-item>\n     <ion-label class="parameter"><strong>Year</strong></ion-label>\n     <ion-select (ionChange)="setDepartmentValues(sYear,sSemester,sDepartment)" [(ngModel)]="sYear">\n          <ion-option  [value]="selYear" *ngFor = "let selYear of years">{{selYear}}  </ion-option>\n    </ion-select>\n    </ion-item>\n\n\n\n<ion-item>\n    <ion-label class="parameter">Semester</ion-label>\n    <ion-select  [(ngModel)]="sSemester" (ionChange)="setSubjectValues(sYear,sSemester,sDepartment)">\n      <ion-option  [value]="selSemester" *ngFor="let selSemester of semesters ">{{selSemester}}</ion-option>\n    </ion-select>\n  </ion-item>\n\n\n\n\n<ion-item>\n      <ion-label class="parameter">Department</ion-label>\n      <ion-select (ionChange)="setSubjectValues(sYear,sSemester,sDepartment)" [(ngModel)]="sDepartment">\n         <ion-option  [value]="selDepartment" *ngFor = "let selDepartment of selectedDepartments">{{selDepartment}}</ion-option>\n      </ion-select>\n </ion-item>\n\n\n\n\n\n  <ion-item >\n    <ion-label class="parameter"> Subject </ion-label>\n      <ion-select [(ngModel)]="sSubject" (ionChange)="finalizeSubjectValue(sSubject)">\n        <ion-option  [value]="selSubject" *ngFor="let selSubject of selectedSubjects" >{{selSubject}}</ion-option>\n      </ion-select>\n\n  </ion-item>\n\n\n  <ion-item>\n    <ion-label class="parameter"> Date </ion-label>\n    <ion-datetime displayFormat="DD-MM-YYYY"  [(ngModel)]="today" (ionChange)="dateChange(today)"></ion-datetime>\n  </ion-item>\n\n  <button ion-button block style="background-color: #e60000  " (click)="markAttendance(sYear,sDepartment,sSubject)" class="log">\n    MARK ATTENDANCE</button>\n\n\n  <button ion-button block style="background-color: #e60000  " (click)="checkAttendance(sYear,sDepartment,sSemester,sSubject)" class="log">\n    GENERATE REPORT</button> <!--\n  <button ion-button block style="background-color: navy;" type="button" (click)="test()">Test Btn</button>\n    \n  <br>-->\n  <button ion-button block style="background-color: navy;" type="button" (click)="scancode()">Scan Barcode</button>\n\n </ion-list>\n</ion-content>\n'/*ion-inline-end:"E:\Work\Mini Project\LicetApp\src\pages\profile\profile.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__["a" /* AngularFireAuth */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* ToastController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_3_angularfire2_database__["a" /* AngularFireDatabase */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */], __WEBPACK_IMPORTED_MODULE_6__ionic_native_barcode_scanner__["a" /* BarcodeScanner */], __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__["a" /* AngularFireAuth */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_3_angularfire2_database__["a" /* AngularFireDatabase */]])
 ], ProfilePage);
 
 //# sourceMappingURL=profile.js.map
 
 /***/ }),
 
-/***/ 151:
+/***/ 152:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -264,11 +326,11 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 151;
+webpackEmptyAsyncContext.id = 152;
 
 /***/ }),
 
-/***/ 194:
+/***/ 195:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -277,7 +339,7 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 194;
+webpackEmptyAsyncContext.id = 195;
 
 /***/ }),
 
@@ -312,7 +374,7 @@ var TabsPage = (function () {
     return TabsPage;
 }());
 TabsPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"E:\Work\Mini Project\LicetApp\src\pages\tabs\tabs.html"*/'<ion-tabs color="mycolor2">\n  <ion-tab [root]="tab1Root" tabTitle="Professors Login" ></ion-tab>\n  <ion-tab [root]="tab2Root" tabTitle="Students Login" ></ion-tab>\n  <ion-tab [root]="tab3Root" tabTitle="Test Tab"  ></ion-tab>\n</ion-tabs>\n'/*ion-inline-end:"E:\Work\Mini Project\LicetApp\src\pages\tabs\tabs.html"*/
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"E:\Work\Mini Project\LicetApp\src\pages\tabs\tabs.html"*/'<ion-tabs color="mycolor1">\n  <ion-tab [root]="tab1Root" tabTitle="Professors Login" ></ion-tab>\n  <ion-tab [root]="tab2Root" tabTitle="Students Login" ></ion-tab>\n  <ion-tab [root]="tab3Root" tabTitle="Test Tab"  ></ion-tab>\n</ion-tabs>\n'/*ion-inline-end:"E:\Work\Mini Project\LicetApp\src\pages\tabs\tabs.html"*/
     }),
     __metadata("design:paramtypes", [])
 ], TabsPage);
@@ -400,9 +462,9 @@ TestTabPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_database__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__profile_profile__ = __webpack_require__(137);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__reset_reset__ = __webpack_require__(525);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__profile_edit_profile_edit__ = __webpack_require__(526);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__profile_profile__ = __webpack_require__(138);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__reset_reset__ = __webpack_require__(526);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__profile_edit_profile_edit__ = __webpack_require__(527);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -517,7 +579,7 @@ var ProfessorPage = (function () {
 }());
 ProfessorPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-professor',template:/*ion-inline-start:"E:\Work\Mini Project\LicetApp\src\pages\Professor\Professor.html"*/'<ion-header>\n  <ion-navbar >\n    <ion-title class="toolbar-background">Professors Login</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-card class="text animated pulse">\n    \n    <ion-card-content>\n      <ion-list no-lines>\n\n        <ion-item>\n          <div class="logoImage"></div>​\n           <!-- <img class="circle" src="../img/logo.jpg" alt="your image"> -->\n        </ion-item>\n\n        <ion-item>\n\n          <ion-label floating style="color: #00004d; font-weight: 900;">Username   <ion-icon ios="ios-lock" md="md-lock"></ion-icon>\n          </ion-label>\n          <ion-input type="text" name="email" [(ngModel)]="user.email"></ion-input>\n        </ion-item>\n        \n        <ion-item>\n          <ion-label floating style="color: #00004d; font-weight: 900;">Password  <ion-icon ios="ios-key" md="md-key"></ion-icon>\n          </ion-label>\n          <ion-input type="password" name="password" [(ngModel)]="user.password"></ion-input>\n        </ion-item>\n\n        <ion-item>\n          <p style="color: #000000; font-weight: 900; font-size: 15px;">Forgot Password ? <a style="color:#000000;font-weight: 900; font-size: 15px; " (click)="reset()">Get Your password</a></p>\n        </ion-item>\n        <button ion-button  block  id="loginBtn" (click)="login(user)" style="background-color: navy;  ">Login</button>\n      </ion-list>\n    </ion-card-content>\n  </ion-card>\n</ion-content>\n'/*ion-inline-end:"E:\Work\Mini Project\LicetApp\src\pages\Professor\Professor.html"*/,
+        selector: 'page-professor',template:/*ion-inline-start:"E:\Work\Mini Project\LicetApp\src\pages\Professor\Professor.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-title class="toolbar-background"><strong>Professors Login</strong></ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-card class="text animated pulse">\n\n    <ion-card-content>\n      <ion-list no-lines>\n\n        <ion-item>\n          <div class="logoImage"></div>​\n           <!-- <img class="circle" src="../img/logo.jpg" alt="your image"> -->\n        </ion-item>\n\n        <ion-item>\n\n          <ion-label floating style="color: #00004d; font-weight: 900;">Username   <ion-icon ios="ios-lock" md="md-lock"></ion-icon>\n          </ion-label>\n          <ion-input type="text" name="email" [(ngModel)]="user.email"></ion-input>\n        </ion-item>\n\n        <ion-item>\n          <ion-label floating style="color: #00004d; font-weight: 900;">Password  <ion-icon ios="ios-key" md="md-key"></ion-icon>\n          </ion-label>\n          <ion-input type="password" name="password" [(ngModel)]="user.password"></ion-input>\n        </ion-item>\n\n        <ion-item>\n          <p style="color: #000000; font-weight: 900; font-size: 15px;">Forgot Password ? <a style="color:#000000;font-weight: 900; font-size: 15px; " (click)="reset()">Get Your password</a></p>\n        </ion-item>\n        <button ion-button  block  id="loginBtn" (click)="login(user)" style="background-color: #e60000  ">Login</button>\n      </ion-list>\n    </ion-card-content>\n  </ion-card>\n</ion-content>\n'/*ion-inline-end:"E:\Work\Mini Project\LicetApp\src\pages\Professor\Professor.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__["a" /* AngularFireAuth */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_3_angularfire2_database__["a" /* AngularFireDatabase */]])
@@ -537,9 +599,9 @@ ProfessorPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angularfire2_database__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__ = __webpack_require__(138);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__ = __webpack_require__(139);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ionic_native__ = __webpack_require__(591);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ionic_native__ = __webpack_require__(592);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -612,6 +674,7 @@ var AttendancePage = (function () {
         for (var i in this.regNo) {
             this.attendanceArray[i] = "true";
             this.markAttendance(this.data[i], this.attendanceArray[i]);
+            this.absentArray = [];
         }
     };
     AttendancePage.prototype.markAttendance = function (test, attendanceArray) {
@@ -654,6 +717,9 @@ var AttendancePage = (function () {
                     handler: function () {
                         console.log('OK clicked');
                         try {
+                            _this.date = _this.attendanceObject.currentDate + "." + _this.attendanceObject.currentMonth + "." + _this.attendanceObject.currentYear;
+                            _this.namedetails2 = _this.afData.object("Attendance/Attendance/" + _this.attendanceObject.year + " Year/" + _this.attendanceObject.dept + "/" + (_this.attendanceObject.currentDate + _this.attendanceObject.currentMonth + _this.attendanceObject.currentYear + _this.attendanceObject.subjects + "/")).set(_this.absentArray);
+                            console.log(_this.date);
                             for (var _i = 0, _a = _this.absentArray; _i < _a.length; _i++) {
                                 var i = _a[_i];
                                 console.log(i);
@@ -696,12 +762,11 @@ var AttendancePage = (function () {
 }());
 AttendancePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-attendance',template:/*ion-inline-start:"E:\Work\Mini Project\LicetApp\src\pages\attendance\attendance.html"*/'<!--\n  Generated template for the AttendancePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Attendance: {{this.dept}}</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <button ion-button type="button" (click)="checkAll()" class="con">Select All</button>\n\n  <ion-list>\n    <ion-item class="mark" *ngFor = "let regNo of regNo; let i = index" >\n      <ion-label class="select"> {{regNo}} {{name[i]}}  </ion-label>\n      <ion-checkbox [(ngModel)] = "attendanceArray[i]" (ionChange)="markAttendance(regNo,attendanceArray[i])" checked="true">  </ion-checkbox>\n    </ion-item>\n  </ion-list>\n\n  <ion-item>\n     <button ion-button type="button" (click)="confirmAttendance()" class="con">Confirm Attendance</button>\n     <button ion-button type="button" (click)="goBack()" class="con">Back</button>\n   </ion-item>\n\n</ion-content>\n'/*ion-inline-end:"E:\Work\Mini Project\LicetApp\src\pages\attendance\attendance.html"*/,
+        selector: 'page-attendance',template:/*ion-inline-start:"E:\Work\Mini Project\LicetApp\src\pages\attendance\attendance.html"*/'<!--\n  Generated template for the AttendancePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n\n<ion-header>\n\n  <ion-navbar color="primary">\n    <ion-title class="toolbar-background">Attendance: {{this.dept}}</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <button ion-button type="button" (click)="checkAll()" class="con">Select All</button>\n\n  <ion-list>\n    <ion-item class="mark"  style="background-color: #000000;  " *ngFor = "let regNo of regNo; let i = index" >\n      <ion-label class="select1"> {{regNo}} {{name[i]}}  </ion-label>\n      <ion-checkbox [(ngModel)] = "attendanceArray[i]" (ionChange)="markAttendance(regNo,attendanceArray[i])" checked="true">  </ion-checkbox>\n    </ion-item>\n  </ion-list>\n\n\n     <button ion-button type="button" (click)="confirmAttendance()" class="con">Confirm Attendance</button><br />\n     <button ion-button type="button" (click)="goBack()" class="con">Back</button>\n\n\n</ion-content>\n'/*ion-inline-end:"E:\Work\Mini Project\LicetApp\src\pages\attendance\attendance.html"*/,
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__["a" /* AngularFireAuth */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__["a" /* AngularFireAuth */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4_angularfire2_database__["a" /* AngularFireDatabase */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angularfire2_database__["a" /* AngularFireDatabase */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */]) === "function" && _f || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__["a" /* AngularFireAuth */], __WEBPACK_IMPORTED_MODULE_4_angularfire2_database__["a" /* AngularFireDatabase */], __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */]])
 ], AttendancePage);
 
-var _a, _b, _c, _d, _e, _f;
 //# sourceMappingURL=attendance.js.map
 
 /***/ }),
@@ -751,17 +816,26 @@ var ReportPage = (function () {
         this.sDate = this.navParams.get("param6");
         this.sMonth = this.navParams.get("param7");
         this.sYear = this.navParams.get("param8");
-        this.attendanceDetails = afData.list('Attendance/Attendance/' + this.dept + '/' + this.year + ' Year/');
-        this.attendanceDetails.subscribe(function (data) {
-            data.forEach(function (snapshot) {
-                if (snapshot.dept = _this.dept && snapshot.year == _this.year && snapshot.periodNo == _this.periods && snapshot.semester == _this.semester &&
-                    snapshot.subjects == _this.subject && snapshot.currentDate == _this.sDate && snapshot.currentMonth == _this.sMonth && snapshot.currentYear == _this.sYear) {
-                    for (var _i = 0, _a = snapshot.absentees; _i < _a.length; _i++) {
-                        var i = _a[_i];
-                        _this.absentArray.push(i);
-                    }
-                }
-            });
+        this.attendanceDetails2 = this.afData.object("Attendance/Attendance/" + this.year + " Year/" + this.dept + "/" + (this.sDate + this.sMonth + this.sYear + this.subject + "/"));
+        this.attendanceDetails2.subscribe(function (data) {
+            /*data.forEach(snapshot =>{
+              if(snapshot.dept = this.dept && snapshot.year == this.year && snapshot.periodNo == this.periods && snapshot.semester ==this.semester &&
+                 snapshot.subjects == this.subject  && snapshot.currentDate == this.sDate && snapshot.currentMonth == this.sMonth && snapshot.currentYear == this.sYear){
+                for(let i of snapshot.absentees){
+                  this.absentArray.push(i);
+              }
+      
+              }
+            });*/
+            console.log(data);
+            var keys = Object.keys(data);
+            //this.data=keys;
+            for (var _i = 0, keys_1 = keys; _i < keys_1.length; _i++) {
+                var i = keys_1[_i];
+                console.log(data[i]);
+                _this.absentArray[i] = data[i];
+            }
+            console.log("The absentees aree " + _this.absentArray);
         });
         console.log("The absentees are " + this.absentArray);
     }
@@ -778,7 +852,7 @@ var ReportPage = (function () {
 }());
 ReportPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-report',template:/*ion-inline-start:"E:\Work\Mini Project\LicetApp\src\pages\report\report.html"*/'<!--\n  Generated template for the ReportPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar hideBackButton>\n    <ion-title>report</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-list>\n    <ion-item *ngFor = "let absentees of absentArray">\n      <ion-label> {{absentees}} </ion-label>\n    </ion-item>\n  </ion-list>\n\n  <ion-list>\n    <ion-item>\n        <button ion-button type = "button" (click)="goBack()">Back</button>\n    </ion-item>\n  </ion-list>\n\n</ion-content>\n'/*ion-inline-end:"E:\Work\Mini Project\LicetApp\src\pages\report\report.html"*/,
+        selector: 'page-report',template:/*ion-inline-start:"E:\Work\Mini Project\LicetApp\src\pages\report\report.html"*/'<!--\n  Generated template for the ReportPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar color="primary">\n    <ion-title class="toolbar-background"><strong>Report</strong></ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-list>\n    <ion-item  *ngFor = "let absentees of absentArray">\n      <ion-label > {{absentees}} </ion-label>\n    </ion-item>\n  </ion-list>\n\n\n        <button ion-button type = "button" style="background-color: #e60000  " (click)="goBack()">Back</button>\n\n\n</ion-content>\n'/*ion-inline-end:"E:\Work\Mini Project\LicetApp\src\pages\report\report.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__["a" /* AngularFireAuth */], __WEBPACK_IMPORTED_MODULE_3_angularfire2_database__["a" /* AngularFireDatabase */]])
 ], ReportPage);
@@ -787,7 +861,7 @@ ReportPage = __decorate([
 
 /***/ }),
 
-/***/ 525:
+/***/ 526:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -905,7 +979,7 @@ ResetPage = __decorate([
 
 /***/ }),
 
-/***/ 526:
+/***/ 527:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -914,7 +988,7 @@ ResetPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_database__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__profile_profile__ = __webpack_require__(137);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__profile_profile__ = __webpack_require__(138);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -986,13 +1060,13 @@ ProfileEditPage = __decorate([
 
 /***/ }),
 
-/***/ 527:
+/***/ 528:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(528);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(532);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(529);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(533);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_take__ = __webpack_require__(274);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_take___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_take__);
 
@@ -1003,7 +1077,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 532:
+/***/ 533:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1012,28 +1086,30 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(569);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(570);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_forms__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_Student_Student__ = __webpack_require__(240);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_testtab_testtab__ = __webpack_require__(241);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_Professor_Professor__ = __webpack_require__(242);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_report_report__ = __webpack_require__(409);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_profile_profile__ = __webpack_require__(137);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_profile_profile__ = __webpack_require__(138);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_tabs_tabs__ = __webpack_require__(239);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_reset_reset__ = __webpack_require__(525);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_profile_edit_profile_edit__ = __webpack_require__(526);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_reset_reset__ = __webpack_require__(526);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_profile_edit_profile_edit__ = __webpack_require__(527);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_attendance_attendance__ = __webpack_require__(255);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ionic_native_status_bar__ = __webpack_require__(234);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ionic_native_status_bar__ = __webpack_require__(235);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_native_splash_screen__ = __webpack_require__(238);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_angularfire2__ = __webpack_require__(851);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_angularfire2__ = __webpack_require__(852);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_angularfire2_auth__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_angularfire2_database__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__ionic_native_barcode_scanner__ = __webpack_require__(410);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -1105,6 +1181,7 @@ AppModule = __decorate([
         providers: [
             __WEBPACK_IMPORTED_MODULE_14__ionic_native_status_bar__["a" /* StatusBar */],
             __WEBPACK_IMPORTED_MODULE_15__ionic_native_splash_screen__["a" /* SplashScreen */],
+            __WEBPACK_IMPORTED_MODULE_19__ionic_native_barcode_scanner__["a" /* BarcodeScanner */],
             { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicErrorHandler */] }
         ]
     })
@@ -1114,14 +1191,14 @@ AppModule = __decorate([
 
 /***/ }),
 
-/***/ 569:
+/***/ 570:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(234);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(235);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(238);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_tabs_tabs__ = __webpack_require__(239);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1160,240 +1237,240 @@ MyApp = __decorate([
 
 /***/ }),
 
-/***/ 850:
+/***/ 851:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./af": 410,
-	"./af.js": 410,
-	"./ar": 411,
-	"./ar-dz": 412,
-	"./ar-dz.js": 412,
-	"./ar-kw": 413,
-	"./ar-kw.js": 413,
-	"./ar-ly": 414,
-	"./ar-ly.js": 414,
-	"./ar-ma": 415,
-	"./ar-ma.js": 415,
-	"./ar-sa": 416,
-	"./ar-sa.js": 416,
-	"./ar-tn": 417,
-	"./ar-tn.js": 417,
-	"./ar.js": 411,
-	"./az": 418,
-	"./az.js": 418,
-	"./be": 419,
-	"./be.js": 419,
-	"./bg": 420,
-	"./bg.js": 420,
-	"./bn": 421,
-	"./bn.js": 421,
-	"./bo": 422,
-	"./bo.js": 422,
-	"./br": 423,
-	"./br.js": 423,
-	"./bs": 424,
-	"./bs.js": 424,
-	"./ca": 425,
-	"./ca.js": 425,
-	"./cs": 426,
-	"./cs.js": 426,
-	"./cv": 427,
-	"./cv.js": 427,
-	"./cy": 428,
-	"./cy.js": 428,
-	"./da": 429,
-	"./da.js": 429,
-	"./de": 430,
-	"./de-at": 431,
-	"./de-at.js": 431,
-	"./de-ch": 432,
-	"./de-ch.js": 432,
-	"./de.js": 430,
-	"./dv": 433,
-	"./dv.js": 433,
-	"./el": 434,
-	"./el.js": 434,
-	"./en-au": 435,
-	"./en-au.js": 435,
-	"./en-ca": 436,
-	"./en-ca.js": 436,
-	"./en-gb": 437,
-	"./en-gb.js": 437,
-	"./en-ie": 438,
-	"./en-ie.js": 438,
-	"./en-nz": 439,
-	"./en-nz.js": 439,
-	"./eo": 440,
-	"./eo.js": 440,
-	"./es": 441,
-	"./es-do": 442,
-	"./es-do.js": 442,
-	"./es.js": 441,
-	"./et": 443,
-	"./et.js": 443,
-	"./eu": 444,
-	"./eu.js": 444,
-	"./fa": 445,
-	"./fa.js": 445,
-	"./fi": 446,
-	"./fi.js": 446,
-	"./fo": 447,
-	"./fo.js": 447,
-	"./fr": 448,
-	"./fr-ca": 449,
-	"./fr-ca.js": 449,
-	"./fr-ch": 450,
-	"./fr-ch.js": 450,
-	"./fr.js": 448,
-	"./fy": 451,
-	"./fy.js": 451,
-	"./gd": 452,
-	"./gd.js": 452,
-	"./gl": 453,
-	"./gl.js": 453,
-	"./gom-latn": 454,
-	"./gom-latn.js": 454,
-	"./he": 455,
-	"./he.js": 455,
-	"./hi": 456,
-	"./hi.js": 456,
-	"./hr": 457,
-	"./hr.js": 457,
-	"./hu": 458,
-	"./hu.js": 458,
-	"./hy-am": 459,
-	"./hy-am.js": 459,
-	"./id": 460,
-	"./id.js": 460,
-	"./is": 461,
-	"./is.js": 461,
-	"./it": 462,
-	"./it.js": 462,
-	"./ja": 463,
-	"./ja.js": 463,
-	"./jv": 464,
-	"./jv.js": 464,
-	"./ka": 465,
-	"./ka.js": 465,
-	"./kk": 466,
-	"./kk.js": 466,
-	"./km": 467,
-	"./km.js": 467,
-	"./kn": 468,
-	"./kn.js": 468,
-	"./ko": 469,
-	"./ko.js": 469,
-	"./ky": 470,
-	"./ky.js": 470,
-	"./lb": 471,
-	"./lb.js": 471,
-	"./lo": 472,
-	"./lo.js": 472,
-	"./lt": 473,
-	"./lt.js": 473,
-	"./lv": 474,
-	"./lv.js": 474,
-	"./me": 475,
-	"./me.js": 475,
-	"./mi": 476,
-	"./mi.js": 476,
-	"./mk": 477,
-	"./mk.js": 477,
-	"./ml": 478,
-	"./ml.js": 478,
-	"./mr": 479,
-	"./mr.js": 479,
-	"./ms": 480,
-	"./ms-my": 481,
-	"./ms-my.js": 481,
-	"./ms.js": 480,
-	"./my": 482,
-	"./my.js": 482,
-	"./nb": 483,
-	"./nb.js": 483,
-	"./ne": 484,
-	"./ne.js": 484,
-	"./nl": 485,
-	"./nl-be": 486,
-	"./nl-be.js": 486,
-	"./nl.js": 485,
-	"./nn": 487,
-	"./nn.js": 487,
-	"./pa-in": 488,
-	"./pa-in.js": 488,
-	"./pl": 489,
-	"./pl.js": 489,
-	"./pt": 490,
-	"./pt-br": 491,
-	"./pt-br.js": 491,
-	"./pt.js": 490,
-	"./ro": 492,
-	"./ro.js": 492,
-	"./ru": 493,
-	"./ru.js": 493,
-	"./sd": 494,
-	"./sd.js": 494,
-	"./se": 495,
-	"./se.js": 495,
-	"./si": 496,
-	"./si.js": 496,
-	"./sk": 497,
-	"./sk.js": 497,
-	"./sl": 498,
-	"./sl.js": 498,
-	"./sq": 499,
-	"./sq.js": 499,
-	"./sr": 500,
-	"./sr-cyrl": 501,
-	"./sr-cyrl.js": 501,
-	"./sr.js": 500,
-	"./ss": 502,
-	"./ss.js": 502,
-	"./sv": 503,
-	"./sv.js": 503,
-	"./sw": 504,
-	"./sw.js": 504,
-	"./ta": 505,
-	"./ta.js": 505,
-	"./te": 506,
-	"./te.js": 506,
-	"./tet": 507,
-	"./tet.js": 507,
-	"./th": 508,
-	"./th.js": 508,
-	"./tl-ph": 509,
-	"./tl-ph.js": 509,
-	"./tlh": 510,
-	"./tlh.js": 510,
-	"./tr": 511,
-	"./tr.js": 511,
-	"./tzl": 512,
-	"./tzl.js": 512,
-	"./tzm": 513,
-	"./tzm-latn": 514,
-	"./tzm-latn.js": 514,
-	"./tzm.js": 513,
-	"./uk": 515,
-	"./uk.js": 515,
-	"./ur": 516,
-	"./ur.js": 516,
-	"./uz": 517,
-	"./uz-latn": 518,
-	"./uz-latn.js": 518,
-	"./uz.js": 517,
-	"./vi": 519,
-	"./vi.js": 519,
-	"./x-pseudo": 520,
-	"./x-pseudo.js": 520,
-	"./yo": 521,
-	"./yo.js": 521,
-	"./zh-cn": 522,
-	"./zh-cn.js": 522,
-	"./zh-hk": 523,
-	"./zh-hk.js": 523,
-	"./zh-tw": 524,
-	"./zh-tw.js": 524
+	"./af": 411,
+	"./af.js": 411,
+	"./ar": 412,
+	"./ar-dz": 413,
+	"./ar-dz.js": 413,
+	"./ar-kw": 414,
+	"./ar-kw.js": 414,
+	"./ar-ly": 415,
+	"./ar-ly.js": 415,
+	"./ar-ma": 416,
+	"./ar-ma.js": 416,
+	"./ar-sa": 417,
+	"./ar-sa.js": 417,
+	"./ar-tn": 418,
+	"./ar-tn.js": 418,
+	"./ar.js": 412,
+	"./az": 419,
+	"./az.js": 419,
+	"./be": 420,
+	"./be.js": 420,
+	"./bg": 421,
+	"./bg.js": 421,
+	"./bn": 422,
+	"./bn.js": 422,
+	"./bo": 423,
+	"./bo.js": 423,
+	"./br": 424,
+	"./br.js": 424,
+	"./bs": 425,
+	"./bs.js": 425,
+	"./ca": 426,
+	"./ca.js": 426,
+	"./cs": 427,
+	"./cs.js": 427,
+	"./cv": 428,
+	"./cv.js": 428,
+	"./cy": 429,
+	"./cy.js": 429,
+	"./da": 430,
+	"./da.js": 430,
+	"./de": 431,
+	"./de-at": 432,
+	"./de-at.js": 432,
+	"./de-ch": 433,
+	"./de-ch.js": 433,
+	"./de.js": 431,
+	"./dv": 434,
+	"./dv.js": 434,
+	"./el": 435,
+	"./el.js": 435,
+	"./en-au": 436,
+	"./en-au.js": 436,
+	"./en-ca": 437,
+	"./en-ca.js": 437,
+	"./en-gb": 438,
+	"./en-gb.js": 438,
+	"./en-ie": 439,
+	"./en-ie.js": 439,
+	"./en-nz": 440,
+	"./en-nz.js": 440,
+	"./eo": 441,
+	"./eo.js": 441,
+	"./es": 442,
+	"./es-do": 443,
+	"./es-do.js": 443,
+	"./es.js": 442,
+	"./et": 444,
+	"./et.js": 444,
+	"./eu": 445,
+	"./eu.js": 445,
+	"./fa": 446,
+	"./fa.js": 446,
+	"./fi": 447,
+	"./fi.js": 447,
+	"./fo": 448,
+	"./fo.js": 448,
+	"./fr": 449,
+	"./fr-ca": 450,
+	"./fr-ca.js": 450,
+	"./fr-ch": 451,
+	"./fr-ch.js": 451,
+	"./fr.js": 449,
+	"./fy": 452,
+	"./fy.js": 452,
+	"./gd": 453,
+	"./gd.js": 453,
+	"./gl": 454,
+	"./gl.js": 454,
+	"./gom-latn": 455,
+	"./gom-latn.js": 455,
+	"./he": 456,
+	"./he.js": 456,
+	"./hi": 457,
+	"./hi.js": 457,
+	"./hr": 458,
+	"./hr.js": 458,
+	"./hu": 459,
+	"./hu.js": 459,
+	"./hy-am": 460,
+	"./hy-am.js": 460,
+	"./id": 461,
+	"./id.js": 461,
+	"./is": 462,
+	"./is.js": 462,
+	"./it": 463,
+	"./it.js": 463,
+	"./ja": 464,
+	"./ja.js": 464,
+	"./jv": 465,
+	"./jv.js": 465,
+	"./ka": 466,
+	"./ka.js": 466,
+	"./kk": 467,
+	"./kk.js": 467,
+	"./km": 468,
+	"./km.js": 468,
+	"./kn": 469,
+	"./kn.js": 469,
+	"./ko": 470,
+	"./ko.js": 470,
+	"./ky": 471,
+	"./ky.js": 471,
+	"./lb": 472,
+	"./lb.js": 472,
+	"./lo": 473,
+	"./lo.js": 473,
+	"./lt": 474,
+	"./lt.js": 474,
+	"./lv": 475,
+	"./lv.js": 475,
+	"./me": 476,
+	"./me.js": 476,
+	"./mi": 477,
+	"./mi.js": 477,
+	"./mk": 478,
+	"./mk.js": 478,
+	"./ml": 479,
+	"./ml.js": 479,
+	"./mr": 480,
+	"./mr.js": 480,
+	"./ms": 481,
+	"./ms-my": 482,
+	"./ms-my.js": 482,
+	"./ms.js": 481,
+	"./my": 483,
+	"./my.js": 483,
+	"./nb": 484,
+	"./nb.js": 484,
+	"./ne": 485,
+	"./ne.js": 485,
+	"./nl": 486,
+	"./nl-be": 487,
+	"./nl-be.js": 487,
+	"./nl.js": 486,
+	"./nn": 488,
+	"./nn.js": 488,
+	"./pa-in": 489,
+	"./pa-in.js": 489,
+	"./pl": 490,
+	"./pl.js": 490,
+	"./pt": 491,
+	"./pt-br": 492,
+	"./pt-br.js": 492,
+	"./pt.js": 491,
+	"./ro": 493,
+	"./ro.js": 493,
+	"./ru": 494,
+	"./ru.js": 494,
+	"./sd": 495,
+	"./sd.js": 495,
+	"./se": 496,
+	"./se.js": 496,
+	"./si": 497,
+	"./si.js": 497,
+	"./sk": 498,
+	"./sk.js": 498,
+	"./sl": 499,
+	"./sl.js": 499,
+	"./sq": 500,
+	"./sq.js": 500,
+	"./sr": 501,
+	"./sr-cyrl": 502,
+	"./sr-cyrl.js": 502,
+	"./sr.js": 501,
+	"./ss": 503,
+	"./ss.js": 503,
+	"./sv": 504,
+	"./sv.js": 504,
+	"./sw": 505,
+	"./sw.js": 505,
+	"./ta": 506,
+	"./ta.js": 506,
+	"./te": 507,
+	"./te.js": 507,
+	"./tet": 508,
+	"./tet.js": 508,
+	"./th": 509,
+	"./th.js": 509,
+	"./tl-ph": 510,
+	"./tl-ph.js": 510,
+	"./tlh": 511,
+	"./tlh.js": 511,
+	"./tr": 512,
+	"./tr.js": 512,
+	"./tzl": 513,
+	"./tzl.js": 513,
+	"./tzm": 514,
+	"./tzm-latn": 515,
+	"./tzm-latn.js": 515,
+	"./tzm.js": 514,
+	"./uk": 516,
+	"./uk.js": 516,
+	"./ur": 517,
+	"./ur.js": 517,
+	"./uz": 518,
+	"./uz-latn": 519,
+	"./uz-latn.js": 519,
+	"./uz.js": 518,
+	"./vi": 520,
+	"./vi.js": 520,
+	"./x-pseudo": 521,
+	"./x-pseudo.js": 521,
+	"./yo": 522,
+	"./yo.js": 522,
+	"./zh-cn": 523,
+	"./zh-cn.js": 523,
+	"./zh-hk": 524,
+	"./zh-hk.js": 524,
+	"./zh-tw": 525,
+	"./zh-tw.js": 525
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -1409,9 +1486,9 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 850;
+webpackContext.id = 851;
 
 /***/ })
 
-},[527]);
+},[528]);
 //# sourceMappingURL=main.js.map

@@ -6,10 +6,10 @@
 -->
 <ion-header>
   <ion-navbar color="primary">
-        <ion-title class="toolbar-background">Profile page</ion-title>
-    <ion-buttons right color="danger">
+        <ion-title class="toolbar-background"><strong>Profile page</strong></ion-title>
+    <!--<ion-buttons right color="danger">
       <button ion-button (click)="logout()">Logout</button>
-    </ion-buttons>
+    </ion-buttons>-->
   </ion-navbar>
 </ion-header>
 
@@ -17,20 +17,20 @@
 <ion-content padding>
 	<ion-list>
 		<ion-item>
-			<ion-label class="parameter">Username:{{(profiledetails|async)?.fname}}</ion-label>
+			<ion-label class="parameter"><strong>Username:{{(profiledetails|async)?.fname}}</strong></ion-label>
 		</ion-item>
 
-  <ion-item>
+  <ion-item >
     <ion-label class="parameter">Period No</ion-label>
     <ion-select (ionChange)="setPeriod(sPeriod)" [(ngModel)]="sPeriod" >
-      <ion-option *ngFor="let period of periods()">{{period}}</ion-option>
+      <ion-option  *ngFor="let period of periods()">{{period}}</ion-option>
     </ion-select>
   </ion-item>
 
   <ion-item>
      <ion-label class="parameter"><strong>Year</strong></ion-label>
      <ion-select (ionChange)="setDepartmentValues(sYear,sSemester,sDepartment)" [(ngModel)]="sYear">
-          <ion-option [value]="sYear" *ngFor = "let sYear of years">{{sYear.name}}  </ion-option>
+          <ion-option  [value]="selYear" *ngFor = "let selYear of years">{{selYear}}  </ion-option>
     </ion-select>
     </ion-item>
 
@@ -39,7 +39,7 @@
 <ion-item>
     <ion-label class="parameter">Semester</ion-label>
     <ion-select  [(ngModel)]="sSemester" (ionChange)="setSubjectValues(sYear,sSemester,sDepartment)">
-      <ion-option [value]="sSemester" *ngFor="let sSemester of semesters ">{{sSemester.name}}</ion-option>
+      <ion-option  [value]="selSemester" *ngFor="let selSemester of semesters ">{{selSemester}}</ion-option>
     </ion-select>
   </ion-item>
 
@@ -49,7 +49,7 @@
 <ion-item>
       <ion-label class="parameter">Department</ion-label>
       <ion-select (ionChange)="setSubjectValues(sYear,sSemester,sDepartment)" [(ngModel)]="sDepartment">
-         <ion-option [value]="sDepartment" *ngFor = "let sDepartment of selectedDepartments">{{sDepartment.name}}</ion-option>
+         <ion-option  [value]="selDepartment" *ngFor = "let selDepartment of selectedDepartments">{{selDepartment}}</ion-option>
       </ion-select>
  </ion-item>
 
@@ -60,7 +60,7 @@
   <ion-item >
     <ion-label class="parameter"> Subject </ion-label>
       <ion-select [(ngModel)]="sSubject" (ionChange)="finalizeSubjectValue(sSubject)">
-        <ion-option [value]="sSubject" *ngFor="let sSubject of selectedSubjects" >{{sSubject}}</ion-option>
+        <ion-option  [value]="selSubject" *ngFor="let selSubject of selectedSubjects" >{{selSubject}}</ion-option>
       </ion-select>
 
   </ion-item>
@@ -68,18 +68,19 @@
 
   <ion-item>
     <ion-label class="parameter"> Date </ion-label>
-    <ion-datetime displayFormat="DD-MM-YYYY" [(ngModel)]="today" (ionChange)="dateChange(today)"></ion-datetime>
+    <ion-datetime displayFormat="DD-MM-YYYY"  [(ngModel)]="today" (ionChange)="dateChange(today)"></ion-datetime>
   </ion-item>
 
-  <button ion-button block style="background-color: navy;" (click)="markAttendance(sYear,sDepartment,sSubject)" class="log">
-    MARK ATTENDANCE</button><br>
+  <button ion-button block style="background-color: #e60000  " (click)="markAttendance(sYear,sDepartment,sSubject)" class="log">
+    MARK ATTENDANCE</button>
 
 
-  <button ion-button block style="background-color: navy;" (click)="checkAttendance(sYear,sDepartment,sSemester,sSubject)" class="log">
-    GENERATE REPORT</button><br>
-<!--
-  <br>
+  <button ion-button block style="background-color: #e60000  " (click)="checkAttendance(sYear,sDepartment,sSemester,sSubject)" class="log">
+    GENERATE REPORT</button> <!--
+  <button ion-button block style="background-color: navy;" type="button" (click)="test()">Test Btn</button>
+    
+  <br>-->
   <button ion-button block style="background-color: navy;" type="button" (click)="scancode()">Scan Barcode</button>
--->
+
  </ion-list>
 </ion-content>

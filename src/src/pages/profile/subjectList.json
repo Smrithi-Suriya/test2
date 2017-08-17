@@ -1,0 +1,2284 @@
+[
+ {
+   "id": 2,
+   "name": "Mathematics - I",
+   "year_id": 1,
+   "department_id": 1,
+   "semester_id": 1
+ },
+ {
+   "id": 3,
+   "name": "Engineering Physics - I",
+   "year_id": 1,
+   "department_id": 1,
+   "semester_id": 1
+ },
+ {
+   "id": 4,
+   "name": "Engineering Chemistry -I",
+   "year_id": 1,
+   "department_id": 1,
+   "semester_id": 1
+ },
+ {
+   "id": 5,
+   "name": "Computer Programming",
+   "year_id": 1,
+   "department_id": 1,
+   "semester_id": 1
+ },
+ {
+   "id": 6,
+   "name": "Engineering Graphics",
+   "year_id": 1,
+   "department_id": 1,
+   "semester_id": 1
+ },
+ {
+   "id": 7,
+   "name": "Computer Practices Laboratory",
+   "year_id": 1,
+   "department_id": 1,
+   "semester_id": 1
+ },
+ {
+   "id": 8,
+   "name": "Engineering Practices Laboratory",
+   "year_id": 1,
+   "department_id": 1,
+   "semester_id": 1
+ },
+ {
+   "id": 9,
+   "name": "Physics and Chemistry Laboratory - I",
+   "year_id": 1,
+   "department_id": 1,
+   "semester_id": 1
+ },
+ {
+   "id": 10,
+   "name": "Technical English - II",
+   "year_id": 1,
+   "department_id": 1,
+   "semester_id": 2
+ },
+ {
+   "id": 11,
+   "name": "Mathematics - II",
+   "year_id": 1,
+   "department_id": 1,
+   "semester_id": 2
+ },
+ {
+   "id": 12,
+   "name": "Engineering Physics - II",
+   "year_id": 1,
+   "department_id": 1,
+   "semester_id": 2
+ },
+ {
+   "id": 13,
+   "name": "Engineering Chemistry -II",
+   "year_id": 1,
+   "department_id": 1,
+   "semester_id": 2
+ },
+ {
+   "id": 14,
+   "name": "Digital Principles and System Design",
+   "year_id": 1,
+   "department_id": 1,
+   "semester_id": 2
+ },
+ {
+   "id": 15,
+   "name": "Programming and Data Structures -I",
+   "year_id": 1,
+   "department_id": 1,
+   "semester_id": 2
+ },
+ {
+   "id": 16,
+   "name": "Physics and Chemistry Laboratory - II",
+   "year_id": 1,
+   "department_id": 1,
+   "semester_id": 2
+ },
+ {
+   "id": 17,
+   "name": "Digital Laboratory",
+   "year_id": 1,
+   "department_id": 1,
+   "semester_id": 2
+ },
+ {
+   "id": 18,
+   "name": "Programming and Data Structures Laboratory - I",
+   "year_id": 1,
+   "department_id": 1,
+   "semester_id": 2
+ },
+ {
+   "id": 19,
+   "name": "Technical English - I",
+   "year_id": 1,
+   "department_id": 2,
+   "semester_id": 1
+ },
+ {
+   "id": 20,
+   "name": "Mathematics - I",
+   "year_id": 1,
+   "department_id": 2,
+   "semester_id": 1
+ },
+ {
+   "id": 21,
+   "name": "Engineering Physics - I",
+   "year_id": 1,
+   "department_id": 2,
+   "semester_id": 1
+ },
+ {
+   "id": 22,
+   "name": "Engineering Chemistry -I",
+   "year_id": 1,
+   "department_id": 2,
+   "semester_id": 1
+ },
+ {
+   "id": 23,
+   "name": "Computer Programming",
+   "year_id": 1,
+   "department_id": 2,
+   "semester_id": 1
+ },
+ {
+   "id": 24,
+   "name": "Engineering Graphics",
+   "year_id": 1,
+   "department_id": 2,
+   "semester_id": 1
+ },
+ {
+   "id": 25,
+   "name": "Computer Practices Laboratory",
+   "year_id": 1,
+   "department_id": 2,
+   "semester_id": 1
+ },
+ {
+   "id": 26,
+   "name": "Engineering Practices Laboratory",
+   "year_id": 1,
+   "department_id": 2,
+   "semester_id": 1
+ },
+ {
+   "id": 27,
+   "name": "Physics and Chemistry Laboratory - I",
+   "year_id": 1,
+   "department_id": 2,
+   "semester_id": 1
+ },
+ {
+   "id": 28,
+   "name": "Technical English - II",
+   "year_id": 1,
+   "department_id": 2,
+   "semester_id": 2
+ },
+ {
+   "id": 29,
+   "name": "Mathematics - II",
+   "year_id": 1,
+   "department_id": 2,
+   "semester_id": 2
+ },
+ {
+   "id": 30,
+   "name": "Engineering Physics - II",
+   "year_id": 1,
+   "department_id": 2,
+   "semester_id": 2
+ },
+ {
+   "id": 31,
+   "name": "Engineering Chemistry -II",
+   "year_id": 1,
+   "department_id": 2,
+   "semester_id": 2
+ },
+ {
+   "id": 32,
+   "name": "Basic Civil and Mechanical Laboratory",
+   "year_id": 1,
+   "department_id": 2,
+   "semester_id": 2
+ },
+ {
+   "id": 33,
+   "name": "Circuit Theory",
+   "year_id": 1,
+   "department_id": 2,
+   "semester_id": 2
+ },
+ {
+   "id": 34,
+   "name": "Physics and Chemistry Laboratory - II",
+   "year_id": 1,
+   "department_id": 2,
+   "semester_id": 2
+ },
+ {
+   "id": 35,
+   "name": "Computer Programming Laboratory",
+   "year_id": 1,
+   "department_id": 2,
+   "semester_id": 2
+ },
+ {
+   "id": 36,
+   "name": "Electric Circuits Laboratory",
+   "year_id": 1,
+   "department_id": 2,
+   "semester_id": 2
+ },
+ {
+   "id": 37,
+   "name": "Technical English - I",
+   "year_id": 1,
+   "department_id": 3,
+   "semester_id": 1
+ },
+ {
+   "id": 38,
+   "name": "Mathematics - I",
+   "year_id": 1,
+   "department_id": 3,
+   "semester_id": 1
+ },
+ {
+   "id": 39,
+   "name": "Engineering Physics - I",
+   "year_id": 1,
+   "department_id": 3,
+   "semester_id": 1
+ },
+ {
+   "id": 40,
+   "name": "Engineering Chemistry -I",
+   "year_id": 1,
+   "department_id": 3,
+   "semester_id": 1
+ },
+ {
+   "id": 41,
+   "name": "Computer Programming",
+   "year_id": 1,
+   "department_id": 3,
+   "semester_id": 1
+ },
+ {
+   "id": 42,
+   "name": "Engineering Graphics",
+   "year_id": 1,
+   "department_id": 3,
+   "semester_id": 1
+ },
+ {
+   "id": 43,
+   "name": "Computer Practices Laboratory",
+   "year_id": 1,
+   "department_id": 3,
+   "semester_id": 1
+ },
+ {
+   "id": 44,
+   "name": "Engineering Practices Laboratory",
+   "year_id": 1,
+   "department_id": 3,
+   "semester_id": 1
+ },
+ {
+   "id": 45,
+   "name": "Physics and Chemistry Laboratory - I",
+   "year_id": 1,
+   "department_id": 3,
+   "semester_id": 1
+ },
+ {
+   "id": 46,
+   "name": "Technical English - II",
+   "year_id": 1,
+   "department_id": 3,
+   "semester_id": 2
+ },
+ {
+   "id": 47,
+   "name": "Mathematics - II",
+   "year_id": 1,
+   "department_id": 3,
+   "semester_id": 2
+ },
+ {
+   "id": 48,
+   "name": "Engineering Physics - II",
+   "year_id": 1,
+   "department_id": 3,
+   "semester_id": 2
+ },
+ {
+   "id": 49,
+   "name": "Engineering Chemistry -II",
+   "year_id": 1,
+   "department_id": 3,
+   "semester_id": 2
+ },
+ {
+   "id": 50,
+   "name": "Electronic Devices",
+   "year_id": 1,
+   "department_id": 3,
+   "semester_id": 2
+ },
+ {
+   "id": 51,
+   "name": "Circuit Theory",
+   "year_id": 1,
+   "department_id": 3,
+   "semester_id": 2
+ },
+ {
+   "id": 52,
+   "name": "Physics and Chemistry Laboratory - II",
+   "year_id": 1,
+   "department_id": 3,
+   "semester_id": 2
+ },
+ {
+   "id": 53,
+   "name": "Circuits and Devices Laboratory",
+   "year_id": 1,
+   "department_id": 3,
+   "semester_id": 2
+ },
+ {
+   "id": 54,
+   "name": "Technical English - I",
+   "year_id": 1,
+   "department_id": 4,
+   "semester_id": 1
+ },
+ {
+   "id": 55,
+   "name": "Mathematics - I",
+   "year_id": 1,
+   "department_id": 4,
+   "semester_id": 1
+ },
+ {
+   "id": 56,
+   "name": "Engineering Physics - I",
+   "year_id": 1,
+   "department_id": 4,
+   "semester_id": 1
+ },
+ {
+   "id": 57,
+   "name": "Engineering Chemistry -I",
+   "year_id": 1,
+   "department_id": 4,
+   "semester_id": 1
+ },
+ {
+   "id": 58,
+   "name": "Computer Programming",
+   "year_id": 1,
+   "department_id": 4,
+   "semester_id": 1
+ },
+ {
+   "id": 59,
+   "name": "Engineering Graphics",
+   "year_id": 1,
+   "department_id": 4,
+   "semester_id": 1
+ },
+ {
+   "id": 60,
+   "name": "Computer Practices Laboratory",
+   "year_id": 1,
+   "department_id": 4,
+   "semester_id": 1
+ },
+ {
+   "id": 61,
+   "name": "Engineering Practices Laboratory",
+   "year_id": 1,
+   "department_id": 4,
+   "semester_id": 1
+ },
+ {
+   "id": 62,
+   "name": "Physics and Chemistry Laboratory - I",
+   "year_id": 1,
+   "department_id": 4,
+   "semester_id": 1
+ },
+ {
+   "id": 63,
+   "name": "Technical English - II",
+   "year_id": 1,
+   "department_id": 4,
+   "semester_id": 2
+ },
+ {
+   "id": 64,
+   "name": "Mathematics - II",
+   "year_id": 1,
+   "department_id": 4,
+   "semester_id": 2
+ },
+ {
+   "id": 65,
+   "name": "Engineering Physics - II",
+   "year_id": 1,
+   "department_id": 4,
+   "semester_id": 2
+ },
+ {
+   "id": 66,
+   "name": "Engineering Chemistry -II",
+   "year_id": 1,
+   "department_id": 4,
+   "semester_id": 2
+ },
+ {
+   "id": 67,
+   "name": "Digital Principles and System Design",
+   "year_id": 1,
+   "department_id": 4,
+   "semester_id": 2
+ },
+ {
+   "id": 68,
+   "name": "Programming and Data Structures -I",
+   "year_id": 1,
+   "department_id": 4,
+   "semester_id": 2
+ },
+ {
+   "id": 69,
+   "name": "Physics and Chemistry Laboratory - II",
+   "year_id": 1,
+   "department_id": 4,
+   "semester_id": 2
+ },
+ {
+   "id": 70,
+   "name": "Basic Electrical and Electronics Engineering",
+   "year_id": 1,
+   "department_id": 4,
+   "semester_id": 2
+ },
+ {
+   "id": 71,
+   "name": "Engineering Mechanics",
+   "year_id": 1,
+   "department_id": 4,
+   "semester_id": 2
+ },
+ {
+   "id": 72,
+   "name": "Computer Aided Drafting and Modeling Laboratory",
+   "year_id": 1,
+   "department_id": 4,
+   "semester_id": 2
+ },
+ {
+   "id": 73,
+   "name": "Physics and Chemistry Laboratory - II",
+   "year_id": 1,
+   "department_id": 4,
+   "semester_id": 2
+ },
+ {
+   "id": 74,
+   "name": "Technical English - I",
+   "year_id": 1,
+   "department_id": 5,
+   "semester_id": 1
+ },
+ {
+   "id": 75,
+   "name": "Mathematics - I",
+   "year_id": 1,
+   "department_id": 5,
+   "semester_id": 1
+ },
+ {
+   "id": 76,
+   "name": "Engineering Physics - I",
+   "year_id": 1,
+   "department_id": 5,
+   "semester_id": 1
+ },
+ {
+   "id": 77,
+   "name": "Engineering Chemistry -I",
+   "year_id": 1,
+   "department_id": 5,
+   "semester_id": 1
+ },
+ {
+   "id": 78,
+   "name": "Computer Programming",
+   "year_id": 1,
+   "department_id": 5,
+   "semester_id": 1
+ },
+ {
+   "id": 79,
+   "name": "Engineering Graphics",
+   "year_id": 1,
+   "department_id": 5,
+   "semester_id": 1
+ },
+ {
+   "id": 80,
+   "name": "Computer Practices Laboratory",
+   "year_id": 1,
+   "department_id": 5,
+   "semester_id": 1
+ },
+ {
+   "id": 81,
+   "name": "Engineering Practices Laboratory",
+   "year_id": 1,
+   "department_id": 5,
+   "semester_id": 1
+ },
+ {
+   "id": 82,
+   "name": "Physics and Chemistry Laboratory - I",
+   "year_id": 1,
+   "department_id": 5,
+   "semester_id": 1
+ },
+ {
+   "id": 83,
+   "name": "Technical English - II",
+   "year_id": 1,
+   "department_id": 5,
+   "semester_id": 2
+ },
+ {
+   "id": 84,
+   "name": "Mathematics - II",
+   "year_id": 1,
+   "department_id": 5,
+   "semester_id": 2
+ },
+ {
+   "id": 85,
+   "name": "Engineering Physics - II",
+   "year_id": 1,
+   "department_id": 5,
+   "semester_id": 2
+ },
+ {
+   "id": 86,
+   "name": "Engineering Chemistry -II",
+   "year_id": 1,
+   "department_id": 5,
+   "semester_id": 2
+ },
+ {
+   "id": 87,
+   "name": "Digital Principles and System Design",
+   "year_id": 1,
+   "department_id": 5,
+   "semester_id": 2
+ },
+ {
+   "id": 88,
+   "name": "Programming and Data Structures -I",
+   "year_id": 1,
+   "department_id": 5,
+   "semester_id": 2
+ },
+ {
+   "id": 89,
+   "name": "Physics and Chemistry Laboratory - II",
+   "year_id": 1,
+   "department_id": 5,
+   "semester_id": 2
+ },
+ {
+   "id": 90,
+   "name": "Digital Laboratory",
+   "year_id": 1,
+   "department_id": 5,
+   "semester_id": 2
+ },
+ {
+   "id": 91,
+   "name": "Programming and Data Structures Laboratory - I",
+   "year_id": 1,
+   "department_id": 5,
+   "semester_id": 2
+ },
+ {
+   "id": 92,
+   "name": "Transforms and Partial Differential Equations",
+   "year_id": 2,
+   "department_id": 1,
+   "semester_id": 1
+ },
+ {
+   "id": 93,
+   "name": "Programming and Data Structures -II",
+   "year_id": 2,
+   "department_id": 1,
+   "semester_id": 1
+ },
+ {
+   "id": 94,
+   "name": "Database Management Systems",
+   "year_id": 2,
+   "department_id": 1,
+   "semester_id": 1
+ },
+ {
+   "id": 95,
+   "name": "Computer Architecture",
+   "year_id": 2,
+   "department_id": 1,
+   "semester_id": 1
+ },
+ {
+   "id": 96,
+   "name": "Analog and Digital Communication",
+   "year_id": 2,
+   "department_id": 1,
+   "semester_id": 1
+ },
+ {
+   "id": 97,
+   "name": "Environmental Science and Engineering",
+   "year_id": 2,
+   "department_id": 1,
+   "semester_id": 1
+ },
+ {
+   "id": 98,
+   "name": "Programming and Data Structures Laboratory - II",
+   "year_id": 2,
+   "department_id": 1,
+   "semester_id": 1
+ },
+ {
+   "id": 99,
+   "name": "Database Management Systems Laboratory",
+   "year_id": 2,
+   "department_id": 1,
+   "semester_id": 1
+ },
+ {
+   "id": 100,
+   "name": "Probability and Queueing Theory",
+   "year_id": 2,
+   "department_id": 1,
+   "semester_id": 2
+ },
+ {
+   "id": 101,
+   "name": "Computer Networks",
+   "year_id": 2,
+   "department_id": 1,
+   "semester_id": 2
+ },
+ {
+   "id": 102,
+   "name": "Operating Systems",
+   "year_id": 2,
+   "department_id": 1,
+   "semester_id": 2
+ },
+ {
+   "id": 103,
+   "name": "Design and Analysis of Algorithms",
+   "year_id": 2,
+   "department_id": 1,
+   "semester_id": 2
+ },
+ {
+   "id": 104,
+   "name": "Microprocessor and Microcontroller",
+   "year_id": 2,
+   "department_id": 1,
+   "semester_id": 2
+ },
+ {
+   "id": 105,
+   "name": "Software Engineering",
+   "year_id": 2,
+   "department_id": 1,
+   "semester_id": 2
+ },
+ {
+   "id": 106,
+   "name": "Networks Laboratory",
+   "year_id": 2,
+   "department_id": 1,
+   "semester_id": 2
+ },
+ {
+   "id": 107,
+   "name": "Microprocessor and Microcontroller Laboratory",
+   "year_id": 2,
+   "department_id": 1,
+   "semester_id": 2
+ },
+ {
+   "id": 108,
+   "name": "Operating Systems Laboratory",
+   "year_id": 2,
+   "department_id": 1,
+   "semester_id": 2
+ },
+ {
+   "id": 109,
+   "name": "Transforms and Partial Differential Equations",
+   "year_id": 2,
+   "department_id": 2,
+   "semester_id": 1
+ },
+ {
+   "id": 110,
+   "name": "Digital Logic Circuits",
+   "year_id": 2,
+   "department_id": 2,
+   "semester_id": 1
+ },
+ {
+   "id": 111,
+   "name": "Electromagnetic Theory",
+   "year_id": 2,
+   "department_id": 2,
+   "semester_id": 1
+ },
+ {
+   "id": 112,
+   "name": "Environmental Science and Engineering",
+   "year_id": 2,
+   "department_id": 2,
+   "semester_id": 1
+ },
+ {
+   "id": 113,
+   "name": "Electronic Devices and Circuits",
+   "year_id": 2,
+   "department_id": 2,
+   "semester_id": 1
+ },
+ {
+   "id": 114,
+   "name": "Linear Integrated Circuits and Applications",
+   "year_id": 2,
+   "department_id": 2,
+   "semester_id": 1
+ },
+ {
+   "id": 115,
+   "name": "Electronics Laboratory",
+   "year_id": 2,
+   "department_id": 2,
+   "semester_id": 1
+ },
+ {
+   "id": 116,
+   "name": "Linear and Digital Integrated Circuits Laboratory",
+   "year_id": 2,
+   "department_id": 2,
+   "semester_id": 1
+ },
+ {
+   "id": 117,
+   "name": "Numerical Methods",
+   "year_id": 2,
+   "department_id": 2,
+   "semester_id": 2
+ },
+ {
+   "id": 118,
+   "name": "Electrical Machines - I",
+   "year_id": 2,
+   "department_id": 2,
+   "semester_id": 2
+ },
+ {
+   "id": 119,
+   "name": "Object Oriented Programming",
+   "year_id": 2,
+   "department_id": 2,
+   "semester_id": 2
+ },
+ {
+   "id": 120,
+   "name": "Transmission and Distribution",
+   "year_id": 2,
+   "department_id": 2,
+   "semester_id": 2
+ },
+ {
+   "id": 121,
+   "name": "Discrete Time Systems and Signal Processing",
+   "year_id": 2,
+   "department_id": 2,
+   "semester_id": 2
+ },
+ {
+   "id": 122,
+   "name": "Measurements and Instrumentation",
+   "year_id": 2,
+   "department_id": 2,
+   "semester_id": 2
+ },
+ {
+   "id": 123,
+   "name": "Object Oriented Programming Laboratory",
+   "year_id": 2,
+   "department_id": 2,
+   "semester_id": 2
+ },
+ {
+   "id": 124,
+   "name": "Electrical Machines Laboratory - I",
+   "year_id": 2,
+   "department_id": 2,
+   "semester_id": 2
+ },
+ {
+   "id": 125,
+   "name": "Transforms and Partial Differential Equations",
+   "year_id": 2,
+   "department_id": 3,
+   "semester_id": 1
+ },
+ {
+   "id": 126,
+   "name": "Electrical Engineering and Instrumentation",
+   "year_id": 2,
+   "department_id": 3,
+   "semester_id": 1
+ },
+ {
+   "id": 127,
+   "name": "Object Oriented Programming and Data Structures",
+   "year_id": 2,
+   "department_id": 3,
+   "semester_id": 1
+ },
+ {
+   "id": 128,
+   "name": "Digital Electronics",
+   "year_id": 2,
+   "department_id": 3,
+   "semester_id": 1
+ },
+ {
+   "id": 129,
+   "name": "Signals and Systems",
+   "year_id": 2,
+   "department_id": 3,
+   "semester_id": 1
+ },
+ {
+   "id": 130,
+   "name": "Electronic Circuits- I",
+   "year_id": 2,
+   "department_id": 3,
+   "semester_id": 1
+ },
+ {
+   "id": 131,
+   "name": "Analog and Digital Circuits Laboratory",
+   "year_id": 2,
+   "department_id": 3,
+   "semester_id": 1
+ },
+ {
+   "id": 132,
+   "name": "OOPS and Data Structures Laboratory",
+   "year_id": 2,
+   "department_id": 3,
+   "semester_id": 1
+ },
+ {
+   "id": 133,
+   "name": "Probability and Random Processes",
+   "year_id": 2,
+   "department_id": 3,
+   "semester_id": 2
+ },
+ {
+   "id": 134,
+   "name": "Electronic Circuits II",
+   "year_id": 2,
+   "department_id": 3,
+   "semester_id": 2
+ },
+ {
+   "id": 135,
+   "name": "Communication Theory",
+   "year_id": 2,
+   "department_id": 3,
+   "semester_id": 2
+ },
+ {
+   "id": 136,
+   "name": "Electromagnetic Fields",
+   "year_id": 2,
+   "department_id": 3,
+   "semester_id": 2
+ },
+ {
+   "id": 137,
+   "name": "Linear Integrated Circuits",
+   "year_id": 2,
+   "department_id": 3,
+   "semester_id": 2
+ },
+ {
+   "id": 138,
+   "name": "Control System Engineering",
+   "year_id": 2,
+   "department_id": 3,
+   "semester_id": 2
+ },
+ {
+   "id": 139,
+   "name": "Circuit and Simulation Integrated Laboratory",
+   "year_id": 2,
+   "department_id": 3,
+   "semester_id": 2
+ },
+ {
+   "id": 140,
+   "name": "Linear Integrated Circuit Laboratory",
+   "year_id": 2,
+   "department_id": 3,
+   "semester_id": 2
+ },
+ {
+   "id": 141,
+   "name": "Electrical Engineering and Control System Laboratory",
+   "year_id": 2,
+   "department_id": 3,
+   "semester_id": 2
+ },
+ {
+   "id": 142,
+   "name": "Transforms and Partial Differential Equations",
+   "year_id": 2,
+   "department_id": 4,
+   "semester_id": 1
+ },
+ {
+   "id": 143,
+   "name": "Strength of Materials",
+   "year_id": 2,
+   "department_id": 4,
+   "semester_id": 1
+ },
+ {
+   "id": 144,
+   "name": "Engineering Thermodynamics",
+   "year_id": 2,
+   "department_id": 4,
+   "semester_id": 1
+ },
+ {
+   "id": 145,
+   "name": "Fluid Mechanics and Machinery",
+   "year_id": 2,
+   "department_id": 4,
+   "semester_id": 1
+ },
+ {
+   "id": 146,
+   "name": "Manufacturing Technology - I",
+   "year_id": 2,
+   "department_id": 4,
+   "semester_id": 1
+ },
+ {
+   "id": 147,
+   "name": "Electrical Drives and Controls",
+   "year_id": 2,
+   "department_id": 4,
+   "semester_id": 1
+ },
+ {
+   "id": 148,
+   "name": "Manufacturing Technology Laboratory - I",
+   "year_id": 2,
+   "department_id": 4,
+   "semester_id": 1
+ },
+ {
+   "id": 149,
+   "name": "Fluid Mechanics and Machinery Laboratory",
+   "year_id": 2,
+   "department_id": 4,
+   "semester_id": 1
+ },
+ {
+   "id": 150,
+   "name": "Electrical Engineering Laboratory",
+   "year_id": 2,
+   "department_id": 4,
+   "semester_id": 1
+ },
+ {
+   "id": 151,
+   "name": "Statistics and Numerical Methods",
+   "year_id": 2,
+   "department_id": 4,
+   "semester_id": 2
+ },
+ {
+   "id": 152,
+   "name": "Kinematics of Machinery",
+   "year_id": 2,
+   "department_id": 4,
+   "semester_id": 2
+ },
+ {
+   "id": 153,
+   "name": "Manufacturing Technology– II",
+   "year_id": 2,
+   "department_id": 4,
+   "semester_id": 2
+ },
+ {
+   "id": 154,
+   "name": "Engineering Materials and Metallurgy",
+   "year_id": 2,
+   "department_id": 4,
+   "semester_id": 2
+ },
+ {
+   "id": 155,
+   "name": "Environmental Science and Engineering",
+   "year_id": 2,
+   "department_id": 4,
+   "semester_id": 2
+ },
+ {
+   "id": 156,
+   "name": "Thermal Engineering",
+   "year_id": 2,
+   "department_id": 4,
+   "semester_id": 2
+ },
+ {
+   "id": 157,
+   "name": "Manufacturing Technology Laboratory–",
+   "year_id": 2,
+   "department_id": 4,
+   "semester_id": 2
+ },
+ {
+   "id": 158,
+   "name": "Thermal Engineering Laboratory - II",
+   "year_id": 2,
+   "department_id": 4,
+   "semester_id": 2
+ },
+ {
+   "id": 159,
+   "name": "Strength of Materials Laboratory",
+   "year_id": 2,
+   "department_id": 4,
+   "semester_id": 2
+ },
+ {
+   "id": 160,
+   "name": "Transforms and Partial Differential Equations",
+   "year_id": 2,
+   "department_id": 5,
+   "semester_id": 1
+ },
+ {
+   "id": 161,
+   "name": "Programming and Data Structures -II",
+   "year_id": 2,
+   "department_id": 5,
+   "semester_id": 1
+ },
+ {
+   "id": 162,
+   "name": "Database Management Systems",
+   "year_id": 2,
+   "department_id": 5,
+   "semester_id": 1
+ },
+ {
+   "id": 163,
+   "name": "Computer Architecture",
+   "year_id": 2,
+   "department_id": 5,
+   "semester_id": 1
+ },
+ {
+   "id": 164,
+   "name": "Analog and Digital Communication",
+   "year_id": 2,
+   "department_id": 5,
+   "semester_id": 1
+ },
+ {
+   "id": 165,
+   "name": "Environmental Science and Engineering",
+   "year_id": 2,
+   "department_id": 5,
+   "semester_id": 1
+ },
+ {
+   "id": 166,
+   "name": "Programming and Data Structures Laboratory - II",
+   "year_id": 2,
+   "department_id": 5,
+   "semester_id": 1
+ },
+ {
+   "id": 167,
+   "name": "Database Management Systems Laboratory",
+   "year_id": 2,
+   "department_id": 5,
+   "semester_id": 1
+ },
+ {
+   "id": 168,
+   "name": "Digital Communication Laboratory",
+   "year_id": 2,
+   "department_id": 5,
+   "semester_id": 1
+ },
+ {
+   "id": 169,
+   "name": "Probability and Queueing Theory",
+   "year_id": 2,
+   "department_id": 5,
+   "semester_id": 2
+ },
+ {
+   "id": 170,
+   "name": "Operating Systems",
+   "year_id": 2,
+   "department_id": 5,
+   "semester_id": 2
+ },
+ {
+   "id": 171,
+   "name": "Design and Analysis of Algorithms",
+   "year_id": 2,
+   "department_id": 5,
+   "semester_id": 2
+ },
+ {
+   "id": 172,
+   "name": "Microprocessor and Microcontroller",
+   "year_id": 2,
+   "department_id": 5,
+   "semester_id": 2
+ },
+ {
+   "id": 173,
+   "name": "Software Engineering",
+   "year_id": 2,
+   "department_id": 5,
+   "semester_id": 2
+ },
+ {
+   "id": 174,
+   "name": "Microprocessor and Microcontroller Laboratory",
+   "year_id": 2,
+   "department_id": 5,
+   "semester_id": 2
+ },
+ {
+   "id": 175,
+   "name": "Operating Systems Laboratory",
+   "year_id": 2,
+   "department_id": 5,
+   "semester_id": 2
+ },
+ {
+   "id": 176,
+   "name": "Software Engineering Laboratory",
+   "year_id": 2,
+   "department_id": 5,
+   "semester_id": 2
+ },
+ {
+   "id": 177,
+   "name": "DM",
+   "year_id": 3,
+   "department_id": 1,
+   "semester_id": 1
+ },
+ {
+   "id": 178,
+   "name": "IP",
+   "year_id": 3,
+   "department_id": 1,
+   "semester_id": 1
+ },
+ {
+   "id": 179,
+   "name": "OOAD",
+   "year_id": 3,
+   "department_id": 1,
+   "semester_id": 1
+ },
+ {
+   "id": 180,
+   "name": "ToC",
+   "year_id": 3,
+   "department_id": 1,
+   "semester_id": 1
+ },
+ {
+   "id": 181,
+   "name": "CG",
+   "year_id": 3,
+   "department_id": 1,
+   "semester_id": 1
+ },
+ {
+   "id": 182,
+   "name": "CT-LAB",
+   "year_id": 3,
+   "department_id": 1,
+   "semester_id": 1
+ },
+ {
+   "id": 183,
+   "name": "IP-LAB",
+   "year_id": 3,
+   "department_id": 1,
+   "semester_id": 1
+ },
+ {
+   "id": 184,
+   "name": "CG-LAB",
+   "year_id": 3,
+   "department_id": 1,
+   "semester_id": 1
+ },
+ {
+   "id": 185,
+   "name": "DS",
+   "year_id": 3,
+   "department_id": 1,
+   "semester_id": 2
+ },
+ {
+   "id": 186,
+   "name": "MC",
+   "year_id": 3,
+   "department_id": 1,
+   "semester_id": 2
+ },
+ {
+   "id": 187,
+   "name": "CD",
+   "year_id": 3,
+   "department_id": 1,
+   "semester_id": 2
+ },
+ {
+   "id": 188,
+   "name": "DSP",
+   "year_id": 3,
+   "department_id": 1,
+   "semester_id": 2
+ },
+ {
+   "id": 189,
+   "name": "AI",
+   "year_id": 3,
+   "department_id": 1,
+   "semester_id": 2
+ },
+ {
+   "id": 190,
+   "name": "Elective 1",
+   "year_id": 3,
+   "department_id": 1,
+   "semester_id": 2
+ },
+ {
+   "id": 191,
+   "name": "MAD Lab",
+   "year_id": 3,
+   "department_id": 1,
+   "semester_id": 2
+ },
+ {
+   "id": 192,
+   "name": "Compiler Lab",
+   "year_id": 3,
+   "department_id": 1,
+   "semester_id": 2
+ },
+ {
+   "id": 193,
+   "name": "CSS Lab",
+   "year_id": 3,
+   "department_id": 1,
+   "semester_id": 2
+ },
+ {
+   "id": 194,
+   "name": "PSA",
+   "year_id": 3,
+   "department_id": 2,
+   "semester_id": 1
+ },
+ {
+   "id": 195,
+   "name": "MPMC",
+   "year_id": 3,
+   "department_id": 2,
+   "semester_id": 1
+ },
+ {
+   "id": 196,
+   "name": "PPE",
+   "year_id": 3,
+   "department_id": 2,
+   "semester_id": 1
+ },
+ {
+   "id": 197,
+   "name": "P Electronics",
+   "year_id": 3,
+   "department_id": 2,
+   "semester_id": 1
+ },
+ {
+   "id": 198,
+   "name": "EM-ll",
+   "year_id": 3,
+   "department_id": 2,
+   "semester_id": 1
+ },
+ {
+   "id": 199,
+   "name": "CS",
+   "year_id": 3,
+   "department_id": 2,
+   "semester_id": 1
+ },
+ {
+   "id": 200,
+   "name": "CI Lab",
+   "year_id": 3,
+   "department_id": 2,
+   "semester_id": 1
+ },
+ {
+   "id": 201,
+   "name": "CS Lab",
+   "year_id": 3,
+   "department_id": 2,
+   "semester_id": 1
+ },
+ {
+   "id": 202,
+   "name": "EM Lab-ll",
+   "year_id": 3,
+   "department_id": 2,
+   "semester_id": 1
+ },
+ {
+   "id": 203,
+   "name": "CE",
+   "year_id": 3,
+   "department_id": 2,
+   "semester_id": 2
+ },
+ {
+   "id": 204,
+   "name": "SSD",
+   "year_id": 3,
+   "department_id": 2,
+   "semester_id": 2
+ },
+ {
+   "id": 205,
+   "name": "ES",
+   "year_id": 3,
+   "department_id": 2,
+   "semester_id": 2
+ },
+ {
+   "id": 206,
+   "name": "PSOC",
+   "year_id": 3,
+   "department_id": 2,
+   "semester_id": 2
+ },
+ {
+   "id": 207,
+   "name": "DEM",
+   "year_id": 3,
+   "department_id": 2,
+   "semester_id": 2
+ },
+ {
+   "id": 208,
+   "name": "Elective 1",
+   "year_id": 3,
+   "department_id": 2,
+   "semester_id": 2
+ },
+ {
+   "id": 209,
+   "name": "PED Lab",
+   "year_id": 3,
+   "department_id": 2,
+   "semester_id": 2
+ },
+ {
+   "id": 210,
+   "name": "MPMC Lab",
+   "year_id": 3,
+   "department_id": 2,
+   "semester_id": 2
+ },
+ {
+   "id": 211,
+   "name": "PSTS",
+   "year_id": 3,
+   "department_id": 2,
+   "semester_id": 2
+ },
+ {
+   "id": 212,
+   "name": "DC",
+   "year_id": 3,
+   "department_id": 3,
+   "semester_id": 1
+ },
+ {
+   "id": 213,
+   "name": "PoDSP",
+   "year_id": 3,
+   "department_id": 3,
+   "semester_id": 1
+ },
+ {
+   "id": 214,
+   "name": "TLWG",
+   "year_id": 3,
+   "department_id": 3,
+   "semester_id": 1
+ },
+ {
+   "id": 215,
+   "name": "EVS",
+   "year_id": 3,
+   "department_id": 3,
+   "semester_id": 1
+ },
+ {
+   "id": 216,
+   "name": "MPMC",
+   "year_id": 3,
+   "department_id": 3,
+   "semester_id": 1
+ },
+ {
+   "id": 217,
+   "name": "DSP Lab",
+   "year_id": 3,
+   "department_id": 3,
+   "semester_id": 1
+ },
+ {
+   "id": 218,
+   "name": "CS Lab",
+   "year_id": 3,
+   "department_id": 3,
+   "semester_id": 1
+ },
+ {
+   "id": 219,
+   "name": "MPMC Lab",
+   "year_id": 3,
+   "department_id": 3,
+   "semester_id": 1
+ },
+ {
+   "id": 220,
+   "name": "PoM",
+   "year_id": 3,
+   "department_id": 3,
+   "semester_id": 2
+ },
+ {
+   "id": 221,
+   "name": "CA",
+   "year_id": 3,
+   "department_id": 3,
+   "semester_id": 2
+ },
+ {
+   "id": 222,
+   "name": "CN",
+   "year_id": 3,
+   "department_id": 3,
+   "semester_id": 2
+ },
+ {
+   "id": 223,
+   "name": "VLSI DESIGN",
+   "year_id": 3,
+   "department_id": 3,
+   "semester_id": 2
+ },
+ {
+   "id": 224,
+   "name": "AWP",
+   "year_id": 3,
+   "department_id": 3,
+   "semester_id": 2
+ },
+ {
+   "id": 225,
+   "name": "Elective 1",
+   "year_id": 3,
+   "department_id": 3,
+   "semester_id": 2
+ },
+ {
+   "id": 226,
+   "name": "CN Lab",
+   "year_id": 3,
+   "department_id": 3,
+   "semester_id": 2
+ },
+ {
+   "id": 227,
+   "name": "VLSI Design Lab",
+   "year_id": 3,
+   "department_id": 3,
+   "semester_id": 2
+ },
+ {
+   "id": 228,
+   "name": "CSS Lab",
+   "year_id": 3,
+   "department_id": 3,
+   "semester_id": 2
+ },
+ {
+   "id": 229,
+   "name": "CAD",
+   "year_id": 3,
+   "department_id": 4,
+   "semester_id": 1
+ },
+ {
+   "id": 230,
+   "name": "HMT",
+   "year_id": 3,
+   "department_id": 4,
+   "semester_id": 1
+ },
+ {
+   "id": 231,
+   "name": "DME",
+   "year_id": 3,
+   "department_id": 4,
+   "semester_id": 1
+ },
+ {
+   "id": 232,
+   "name": "MM",
+   "year_id": 3,
+   "department_id": 4,
+   "semester_id": 1
+ },
+ {
+   "id": 233,
+   "name": "DoM",
+   "year_id": 3,
+   "department_id": 4,
+   "semester_id": 1
+ },
+ {
+   "id": 234,
+   "name": "PEE",
+   "year_id": 3,
+   "department_id": 4,
+   "semester_id": 1
+ },
+ {
+   "id": 235,
+   "name": "Dynamics Lab",
+   "year_id": 3,
+   "department_id": 4,
+   "semester_id": 1
+ },
+ {
+   "id": 236,
+   "name": "TE Lab-ll",
+   "year_id": 3,
+   "department_id": 4,
+   "semester_id": 1
+ },
+ {
+   "id": 237,
+   "name": "MM Lab",
+   "year_id": 3,
+   "department_id": 4,
+   "semester_id": 1
+ },
+ {
+   "id": 238,
+   "name": "DoTS",
+   "year_id": 3,
+   "department_id": 4,
+   "semester_id": 2
+ },
+ {
+   "id": 239,
+   "name": "PoM",
+   "year_id": 3,
+   "department_id": 4,
+   "semester_id": 2
+ },
+ {
+   "id": 240,
+   "name": "AE",
+   "year_id": 3,
+   "department_id": 4,
+   "semester_id": 2
+ },
+ {
+   "id": 241,
+   "name": "FEA",
+   "year_id": 3,
+   "department_id": 4,
+   "semester_id": 2
+ },
+ {
+   "id": 242,
+   "name": "GDJP",
+   "year_id": 3,
+   "department_id": 4,
+   "semester_id": 2
+ },
+ {
+   "id": 243,
+   "name": "Elective 1",
+   "year_id": 3,
+   "department_id": 4,
+   "semester_id": 2
+ },
+ {
+   "id": 244,
+   "name": "CAD/CAM Lab",
+   "year_id": 3,
+   "department_id": 4,
+   "semester_id": 2
+ },
+ {
+   "id": 245,
+   "name": "DFP",
+   "year_id": 3,
+   "department_id": 4,
+   "semester_id": 2
+ },
+ {
+   "id": 246,
+   "name": "CSS Lab",
+   "year_id": 3,
+   "department_id": 4,
+   "semester_id": 2
+ },
+ {
+   "id": 247,
+   "name": "CN",
+   "year_id": 3,
+   "department_id": 5,
+   "semester_id": 1
+ },
+ {
+   "id": 248,
+   "name": "GM",
+   "year_id": 3,
+   "department_id": 5,
+   "semester_id": 1
+ },
+ {
+   "id": 249,
+   "name": "OOAD",
+   "year_id": 3,
+   "department_id": 5,
+   "semester_id": 1
+ },
+ {
+   "id": 250,
+   "name": "DSP",
+   "year_id": 3,
+   "department_id": 5,
+   "semester_id": 1
+ },
+ {
+   "id": 251,
+   "name": "WP",
+   "year_id": 3,
+   "department_id": 5,
+   "semester_id": 1
+ },
+ {
+   "id": 252,
+   "name": "WC",
+   "year_id": 3,
+   "department_id": 5,
+   "semester_id": 1
+ },
+ {
+   "id": 253,
+   "name": "NETWORKS Lab",
+   "year_id": 3,
+   "department_id": 5,
+   "semester_id": 1
+ },
+ {
+   "id": 254,
+   "name": "WP Lab",
+   "year_id": 3,
+   "department_id": 5,
+   "semester_id": 1
+ },
+ {
+   "id": 255,
+   "name": "CT Lab",
+   "year_id": 3,
+   "department_id": 5,
+   "semester_id": 1
+ },
+ {
+   "id": 256,
+   "name": "DS",
+   "year_id": 3,
+   "department_id": 5,
+   "semester_id": 2
+ },
+ {
+   "id": 257,
+   "name": "MC",
+   "year_id": 3,
+   "department_id": 5,
+   "semester_id": 2
+ },
+ {
+   "id": 258,
+   "name": "AI",
+   "year_id": 3,
+   "department_id": 5,
+   "semester_id": 2
+ },
+ {
+   "id": 259,
+   "name": "CD",
+   "year_id": 3,
+   "department_id": 5,
+   "semester_id": 2
+ },
+ {
+   "id": 260,
+   "name": "SA",
+   "year_id": 3,
+   "department_id": 5,
+   "semester_id": 2
+ },
+ {
+   "id": 261,
+   "name": "Elective 1",
+   "year_id": 3,
+   "department_id": 5,
+   "semester_id": 2
+ },
+ {
+   "id": 262,
+   "name": "MAD Lab",
+   "year_id": 3,
+   "department_id": 5,
+   "semester_id": 2
+ },
+ {
+   "id": 263,
+   "name": "Compiler Lab",
+   "year_id": 3,
+   "department_id": 5,
+   "semester_id": 2
+ },
+ {
+   "id": 264,
+   "name": "CSS Lab",
+   "year_id": 3,
+   "department_id": 5,
+   "semester_id": 2
+ },
+ {
+   "id": 265,
+   "name": "Cryptography and Network Security",
+   "year_id": 4,
+   "department_id": 1,
+   "semester_id": 1
+ },
+ {
+   "id": 266,
+   "name": "Graph Theory and Applications",
+   "year_id": 4,
+   "department_id": 1,
+   "semester_id": 1
+ },
+ {
+   "id": 267,
+   "name": "Grid and Cloud Computing",
+   "year_id": 4,
+   "department_id": 1,
+   "semester_id": 1
+ },
+ {
+   "id": 268,
+   "name": "Resource Management Techniques",
+   "year_id": 4,
+   "department_id": 1,
+   "semester_id": 1
+ },
+ {
+   "id": 269,
+   "name": "Elective II",
+   "year_id": 4,
+   "department_id": 1,
+   "semester_id": 1
+ },
+ {
+   "id": 270,
+   "name": "Elective III",
+   "year_id": 4,
+   "department_id": 1,
+   "semester_id": 1
+ },
+ {
+   "id": 271,
+   "name": "Security Laboratory",
+   "year_id": 4,
+   "department_id": 1,
+   "semester_id": 1
+ },
+ {
+   "id": 272,
+   "name": "Grid and Cloud Computing Laboratory",
+   "year_id": 4,
+   "department_id": 1,
+   "semester_id": 1
+ },
+ {
+   "id": 273,
+   "name": "Multicore Architectures and Programming",
+   "year_id": 4,
+   "department_id": 1,
+   "semester_id": 2
+ },
+ {
+   "id": 274,
+   "name": "Elective IV",
+   "year_id": 4,
+   "department_id": 1,
+   "semester_id": 2
+ },
+ {
+   "id": 275,
+   "name": "Elective V",
+   "year_id": 4,
+   "department_id": 1,
+   "semester_id": 2
+ },
+ {
+   "id": 276,
+   "name": "Project Work",
+   "year_id": 4,
+   "department_id": 1,
+   "semester_id": 2
+ },
+ {
+   "id": 277,
+   "name": "High Voltage Engineering",
+   "year_id": 4,
+   "department_id": 2,
+   "semester_id": 1
+ },
+ {
+   "id": 278,
+   "name": " Protection and Switchgear",
+   "year_id": 4,
+   "department_id": 2,
+   "semester_id": 1
+ },
+ {
+   "id": 279,
+   "name": "Special Electrical Machines",
+   "year_id": 4,
+   "department_id": 2,
+   "semester_id": 1
+ },
+ {
+   "id": 280,
+   "name": "Principles of Management",
+   "year_id": 4,
+   "department_id": 2,
+   "semester_id": 1
+ },
+ {
+   "id": 281,
+   "name": "Elective II",
+   "year_id": 4,
+   "department_id": 2,
+   "semester_id": 1
+ },
+ {
+   "id": 282,
+   "name": "Elective III",
+   "year_id": 4,
+   "department_id": 2,
+   "semester_id": 1
+ },
+ {
+   "id": 283,
+   "name": "Power System Simulation Laboratory",
+   "year_id": 4,
+   "department_id": 2,
+   "semester_id": 1
+ },
+ {
+   "id": 284,
+   "name": "Comprehension",
+   "year_id": 4,
+   "department_id": 2,
+   "semester_id": 1
+ },
+ {
+   "id": 285,
+   "name": " Electric Energy Generation, Utilization and Conservation",
+   "year_id": 4,
+   "department_id": 2,
+   "semester_id": 2
+ },
+ {
+   "id": 286,
+   "name": "Elective IV",
+   "year_id": 4,
+   "department_id": 2,
+   "semester_id": 2
+ },
+ {
+   "id": 287,
+   "name": "Elective V",
+   "year_id": 4,
+   "department_id": 2,
+   "semester_id": 2
+ },
+ {
+   "id": 288,
+   "name": "Project Work",
+   "year_id": 4,
+   "department_id": 2,
+   "semester_id": 2
+ },
+ {
+   "id": 289,
+   "name": "RF and Microwave Engineering ",
+   "year_id": 4,
+   "department_id": 3,
+   "semester_id": 1
+ },
+ {
+   "id": 290,
+   "name": "Optical Communication and Networks ",
+   "year_id": 4,
+   "department_id": 3,
+   "semester_id": 1
+ },
+ {
+   "id": 291,
+   "name": "Optical Communication and Networks ",
+   "year_id": 4,
+   "department_id": 3,
+   "semester_id": 1
+ },
+ {
+   "id": 292,
+   "name": "Elective II",
+   "year_id": 4,
+   "department_id": 3,
+   "semester_id": 1
+ },
+ {
+   "id": 293,
+   "name": "Elective III",
+   "year_id": 4,
+   "department_id": 3,
+   "semester_id": 1
+ },
+ {
+   "id": 294,
+   "name": "Elective IV",
+   "year_id": 4,
+   "department_id": 3,
+   "semester_id": 1
+ },
+ {
+   "id": 295,
+   "name": "Embedded Laboratory",
+   "year_id": 4,
+   "department_id": 3,
+   "semester_id": 1
+ },
+ {
+   "id": 296,
+   "name": "Optical and Microwave Laboratory",
+   "year_id": 4,
+   "department_id": 3,
+   "semester_id": 1
+ },
+ {
+   "id": 297,
+   "name": "Wireless Communication",
+   "year_id": 4,
+   "department_id": 3,
+   "semester_id": 2
+ },
+ {
+   "id": 298,
+   "name": "Wireless Networks",
+   "year_id": 4,
+   "department_id": 3,
+   "semester_id": 2
+ },
+ {
+   "id": 299,
+   "name": "Elective V",
+   "year_id": 4,
+   "department_id": 3,
+   "semester_id": 2
+ },
+ {
+   "id": 300,
+   "name": "Elective VI",
+   "year_id": 4,
+   "department_id": 3,
+   "semester_id": 2
+ },
+ {
+   "id": 301,
+   "name": "Project Work",
+   "year_id": 4,
+   "department_id": 3,
+   "semester_id": 2
+ },
+ {
+   "id": 302,
+   "name": "Power Plant Engineering",
+   "year_id": 4,
+   "department_id": 4,
+   "semester_id": 1
+ },
+ {
+   "id": 303,
+   "name": "Mechatronics",
+   "year_id": 4,
+   "department_id": 4,
+   "semester_id": 1
+ },
+ {
+   "id": 304,
+   "name": "Computer Integrated Manufacturing Systems",
+   "year_id": 4,
+   "department_id": 4,
+   "semester_id": 1
+ },
+ {
+   "id": 305,
+   "name": "Total Quality Management",
+   "year_id": 4,
+   "department_id": 4,
+   "semester_id": 1
+ },
+ {
+   "id": 306,
+   "name": "Elective II",
+   "year_id": 4,
+   "department_id": 4,
+   "semester_id": 1
+ },
+ {
+   "id": 307,
+   "name": "Elective III",
+   "year_id": 4,
+   "department_id": 4,
+   "semester_id": 1
+ },
+ {
+   "id": 308,
+   "name": "Simulation and Analysis Laboratory",
+   "year_id": 4,
+   "department_id": 4,
+   "semester_id": 1
+ },
+ {
+   "id": 309,
+   "name": "Mechatronics Laboratory",
+   "year_id": 4,
+   "department_id": 4,
+   "semester_id": 1
+ },
+ {
+   "id": 310,
+   "name": "Comprehension",
+   "year_id": 4,
+   "department_id": 4,
+   "semester_id": 1
+ },
+ {
+   "id": 311,
+   "name": "Engineering Economics",
+   "year_id": 4,
+   "department_id": 4,
+   "semester_id": 2
+ },
+ {
+   "id": 312,
+   "name": "Elective IV",
+   "year_id": 4,
+   "department_id": 4,
+   "semester_id": 2
+ },
+ {
+   "id": 313,
+   "name": "Elective V",
+   "year_id": 4,
+   "department_id": 4,
+   "semester_id": 2
+ },
+ {
+   "id": 314,
+   "name": "Project Work",
+   "year_id": 4,
+   "department_id": 4,
+   "semester_id": 2
+ },
+ {
+   "id": 315,
+   "name": "Information Management",
+   "year_id": 4,
+   "department_id": 5,
+   "semester_id": 1
+ },
+ {
+   "id": 316,
+   "name": "Cryptography and Network Security",
+   "year_id": 4,
+   "department_id": 5,
+   "semester_id": 1
+ },
+ {
+   "id": 317,
+   "name": "Data Ware Housing and Data Mining",
+   "year_id": 4,
+   "department_id": 5,
+   "semester_id": 1
+ },
+ {
+   "id": 318,
+   "name": "Data Ware Housing and Data Mining",
+   "year_id": 4,
+   "department_id": 5,
+   "semester_id": 1
+ },
+ {
+   "id": 319,
+   "name": "Elective II",
+   "year_id": 4,
+   "department_id": 5,
+   "semester_id": 1
+ },
+ {
+   "id": 320,
+   "name": "Data Mining Laboratory",
+   "year_id": 4,
+   "department_id": 5,
+   "semester_id": 1
+ },
+ {
+   "id": 321,
+   "name": "Security Laboratory",
+   "year_id": 4,
+   "department_id": 5,
+   "semester_id": 1
+ },
+ {
+   "id": 322,
+   "name": "Grid and Cloud Computing Laboratory",
+   "year_id": 4,
+   "department_id": 5,
+   "semester_id": 1
+ },
+ {
+   "id": 323,
+   "name": "Service Oriented Architecture",
+   "year_id": 4,
+   "department_id": 5,
+   "semester_id": 2
+ },
+ {
+   "id": 324,
+   "name": "Elective III",
+   "year_id": 4,
+   "department_id": 5,
+   "semester_id": 2
+ },
+ {
+   "id": 325,
+   "name": "Elective IV",
+   "year_id": 4,
+   "department_id": 5,
+   "semester_id": 2
+ },
+ {
+   "id": 326,
+   "name": "Elective V",
+   "year_id": 4,
+   "department_id": 5,
+   "semester_id": 2
+ },
+ {
+   "id": 327,
+   "name": "Project Work",
+   "year_id": 4,
+   "department_id": 5,
+   "semester_id": 2
+ }
+]
